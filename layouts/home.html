@@ -132,6 +132,10 @@
     <ul class="guests">
       {{ range hugo.Data.guests.guests }}
       <li class="guest">
+        <figure class="portrait">
+          {{- with .github }}<img src="https://github.com/{{ . }}.png?size=240" alt="" width="120" height="144" loading="lazy">
+          {{- else }}<span class="initials" aria-hidden="true">{{ range first 2 (split .name " ") }}{{ substr . 0 1 }}{{ end }}</span>{{ end -}}
+        </figure>
         <h3>{{ .name }}</h3>
         <p class="guest-role">{{ .role }}</p>
         <p class="guest-sessions">Sessions: {{ .sessions }}</p>

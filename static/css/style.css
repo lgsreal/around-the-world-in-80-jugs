@@ -186,6 +186,14 @@ blockquote { margin: 0 0 .8rem; padding: .2rem 0 .2rem 1rem; border-left: 3px so
 .guests { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem; }
 .guest { padding: 1rem 1.1rem; border: 1.5px solid var(--sepia); background: rgba(255, 250, 238, .55); text-align: center; }
 .guest h3 { margin: 0; font-size: 1.3rem; }
+.portrait {
+  width: 7.5rem; height: 9rem; margin: .3rem auto .9rem; overflow: hidden;
+  border-radius: 50%; border: 2px solid var(--sepia); background: var(--paper-dark);
+  box-shadow: 0 0 0 4px #fbf3e1, 0 0 0 6px var(--brass);
+}
+.portrait img { display: block; width: 100%; height: 100%; object-fit: cover; filter: sepia(.5) contrast(1.05); transition: filter .3s; }
+.guest:hover .portrait img { filter: none; }
+.portrait .initials { display: grid; place-items: center; height: 100%; font: 2.2rem var(--display); color: var(--sepia); }
 .guest-role { margin: .2rem 0; font-style: italic; font-size: .95rem; }
 .guest-sessions { margin: 0; font-family: var(--type); font-size: .82rem; color: var(--sepia); }
 
