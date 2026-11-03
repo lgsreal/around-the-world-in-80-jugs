@@ -1,16 +1,20 @@
+# `github` (optional): GitHub username; the site shows its avatar as the portrait.
 guests:
   - name: Luiz Real
+    github: lgsreal
     role: Host · Forward Deployed Engineer · Oracle ACE · JUG Leader · Author
     sessions: All
     links:
       - { label: GitHub, url: "https://github.com/lgsreal" }
       - { label: LinkedIn, url: "https://www.linkedin.com/in/lgsreal/" }
   - name: Professor Isidro
+    github: professorisidro
     role: Professor · Java Champion
     sessions: Quarkus Club, Out of the Box Developer Podcast, Tamilnadu JUG
     links:
       - { label: LinkedIn, url: "https://www.linkedin.com/in/professor-isidro-phd/" }
   - name: Bruno Souza
+    github: brjavaman
     role: Java Champion
     sessions: Chicago JUG (Career)
     links:
