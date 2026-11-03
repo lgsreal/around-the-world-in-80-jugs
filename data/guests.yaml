@@ -12,6 +12,6 @@ guests:
       - { label: LinkedIn, url: "https://www.linkedin.com/in/professor-isidro-phd/" }
   - name: Bruno Souza
     role: Java Champion
-    sessions: Planned
+    sessions: Chicago JUG (Career)
     links:
       - { label: LinkedIn, url: "https://www.linkedin.com/in/brjavaman/" }

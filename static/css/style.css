@@ -150,6 +150,7 @@ blockquote { margin: 0 0 .8rem; padding: .2rem 0 .2rem 1rem; border-left: 3px so
 .tag-fundamentals { color: var(--navy); }
 .tag-refactoring { color: var(--burgundy); }
 .tag-ai-first-sdlc { color: var(--green); }
+.tag-career { color: var(--sepia); }
 
 /* Journey stamps */
 .filters { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; margin-bottom: 1.4rem; }
@@ -172,6 +173,7 @@ blockquote { margin: 0 0 .8rem; padding: .2rem 0 .2rem 1rem; border-left: 3px so
 .stamp[hidden] { display: none; }
 .stamp-refactoring { --c: var(--burgundy); }
 .stamp-ai-first-sdlc { --c: var(--green); }
+.stamp-career { --c: var(--sepia); }
 .stamp-open { --c: var(--brass); background: transparent; outline-color: var(--paper); }
 .stamp-date { font-family: var(--type); color: var(--c); margin: 0; font-size: .85rem; letter-spacing: .06em; }
 .stamp-jug { margin: .15rem 0 0; font-size: 1.25rem; line-height: 1.2; }
