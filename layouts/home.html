@@ -78,7 +78,7 @@
     <h3 class="sub">Other routes — topics built on the same fundamentals</h3>
     {{ range after 1 $talks }}
     {{ $key := .key }}
-    {{ $past := where $stops "topic" $key }}
+    {{ $past := where (where $stops "topic" $key) "status" "completed" }}
     <details class="fold">
       <summary><span class="tag tag-{{ .key }}">{{ .label }}</span> {{ .title }}</summary>
       <div class="fold-body">
@@ -109,7 +109,7 @@
       {{ $topic := .topic }}
       {{ $label := "" }}{{ range where $talks "key" $topic }}{{ $label = .label }}{{ end }}
       <li class="stamp stamp-{{ .topic }}" data-topic="{{ .topic }}">
-        <p class="stamp-date">{{ time.Format "02 Jan 2006" .date }}</p>
+        <p class="stamp-date">{{ time.Format "02 Jan 2006" .date }}{{ if ne .status "completed" }} · Scheduled{{ end }}</p>
         <h3 class="stamp-jug">{{ .jug }}</h3>
         <p class="stamp-place">{{ .location }}{{ with .venue }} · {{ . }}{{ end }}</p>
         <p class="stamp-title">{{ .title }}</p>
