@@ -1,0 +1,37 @@
+# The first talk is the featured one. `key` matches `topic` in data/journey.yaml.
+talks:
+  - key: fundamentals
+    label: Fundamentals
+    title: How to Become a Better Software Engineer in the Age of AI
+    abstract: >-
+      AI assistants can generate code in seconds, but writing code was never the hardest part of
+      software engineering. Understanding problems, designing solutions, testing behavior, debugging
+      failures, and making sound architectural decisions still depend on the engineer. In this session,
+      Luiz Real explores how developers can grow into better software engineers in the age of AI by
+      strengthening their fundamentals. You will learn why AI is a powerful tool rather than a
+      replacement for engineering judgment, how strong fundamentals help you guide and review
+      AI-generated work, and practical habits you can apply right away in your day-to-day work.
+  - key: refactoring
+    label: Refactoring
+    title: "Refactor Today: Build Faster Tomorrow"
+    aka: 'Also presented as "Refactoring in Java", "Refactoring for the Future", and "Myths and Truths about Refactoring".'
+    abstract: >-
+      Refactoring isn’t just cleaning code — it’s preparing it for what’s next. In this session,
+      Luiz Real shows how small refactoring steps can make your Java projects easier to maintain,
+      ready for new features, and more enjoyable to work on. Real examples, simple techniques, and
+      insights you can apply right away.
+  - key: ai-first-sdlc
+    label: AI-First SDLC
+    title: "The Future of Java Development: An AI-First SDLC"
+    abstract: >-
+      Writing code is only a small part of modern software development. In this talk, we will explore
+      how an AI-First approach redefines the entire SDLC for Java applications, showing how developers
+      can leverage AI at every stage of the process to increase productivity, quality, and delivery
+      capabilities without compromising critical thinking or sound engineering practices.
+  - key: career
+    label: Career
+    title: Grow Your Dev Career Building Visibility in the Java Community
+    aka: 'Also presented as "Developer Career Growth in the AI Age", "3 Actions You Should Take to Get Visible", and "Beyond Code: Building a Personal Brand That Creates Opportunities".'
+    abstract: |-
+      Growing your Java career is not only about writing great code — it’s about connecting, sharing, and showing up. In this talk, Luiz Real shares three simple but powerful actions every developer can take to grow their skills, get recognized, and open doors to new opportunities.
+      You’ll learn how sharing knowledge helps you master your craft, how building real relationships accelerates your growth, and how participating in communities can transform your professional journey — while having fun along the way.

@@ -1,0 +1,155 @@
+# Every stop on the voyage. The site counts unique `jug` values with
+# `status: completed` for the "X / 80 JUGs visited" counter.
+# topic: fundamentals | refactoring | ai-first-sdlc | career (see data/talks.yaml)
+# status: completed | scheduled
+stops:
+  - date: "2025-02-01"
+    jug: SouJava Brasília
+    venue: at Oracle
+    location: Brasília, Brazil
+    topic: refactoring
+    title: "Refactoring in Java: Transform your code to reach a new level and become an advanced dev"
+    link: https://www.linkedin.com/posts/soujava-brasilia_luiz-real-nos-iluminando-sobre-refatora%C3%A7%C3%A3o-activity-7291541056767094784-cfX3
+    status: completed
+  - date: "2025-02-26"
+    jug: SouJava Campinas
+    venue: at Bosch
+    location: Campinas, Brazil
+    topic: refactoring
+    title: "Refactoring in Java: Transform your code to become an advanced dev"
+    link: https://www.youtube.com/live/IZtwEJMvuhE?si=RDM18Ztxsk-Pnw1S&t=75
+    status: completed
+  - date: "2025-03-22"
+    jug: Brasil JUG
+    venue: live
+    location: Online
+    topic: refactoring
+    title: Refactoring in Java
+    link: https://www.youtube.com/watch?v=fiorSlFT2KU
+    status: completed
+  - date: "2025-05-07"
+    jug: Quarkus Club
+    venue: live
+    location: Online
+    topic: refactoring
+    title: Myths and Truths about Refactoring
+    guests: [Professor Isidro]
+    link: https://www.youtube.com/watch?v=693MkH5e-vo
+    status: completed
+  - date: "2025-05-08"
+    jug: São Paulo Java Meetup
+    venue: at Sigma Software
+    location: São Paulo, Brazil
+    topic: refactoring
+    title: Refactoring in Java
+    link: https://www.meetup.com/sao-paulo-java-meetup/events/307355028
+    status: completed
+  - date: "2025-06-24"
+    jug: UaiJUG
+    venue: live
+    location: Online
+    topic: career
+    title: "Java: 30 Years Shaping the Future"
+    link: https://www.youtube.com/watch?v=_x2lleUWGqo
+    status: completed
+  - date: "2025-08-06"
+    jug: Java Maple Leafs
+    venue: live
+    location: Online
+    topic: career
+    title: "Building Careers and Communities: A Conversation with Luiz Real"
+    link: https://silascandiolli.com/2025/09/01/building-careers-and-communities-a-conversation-with-luiz-real/
+    status: completed
+  - date: "2025-08-30"
+    jug: Java Noroeste JUG
+    venue: JavaDay Noroeste
+    location: Brazil
+    topic: refactoring
+    title: Refactoring for the Future
+    link: https://javaday.javanoroeste.com.br/#palestras
+    status: completed
+  - date: "2025-10-13"
+    jug: Orlando JUG
+    location: Orlando, USA
+    topic: career
+    title: 3 Actions You Should Take to Get Visible
+    link: https://www.youtube.com/live/akbGXiAeV_A?si=dCOhrF1pT5GQUwfp&t=1778
+    status: completed
+  - date: "2025-10-16"
+    jug: Chicago JUG
+    venue: at Discover
+    location: Chicago, USA
+    topic: refactoring
+    title: "Refactor Today: Build Faster Tomorrow"
+    link: https://www.youtube.com/live/DJf6hbOtlaw?si=IjPayoS_b6CDg3Un&t=5500
+    status: completed
+  - date: "2025-10-18"
+    jug: Houston JUG
+    location: Houston, USA
+    topic: refactoring
+    title: "Refactor Today: Build Faster Tomorrow"
+    link: https://www.eventbrite.com/e/bruno-souza-and-his-amigos-help-you-to-enhance-your-java-career-tickets-1782090844689
+    status: completed
+  - date: "2026-03-09"
+    jug: Garden State JUG
+    location: New Jersey, USA
+    topic: refactoring
+    title: Refactoring
+    link: https://www.youtube.com/live/atnQyxhcB2Y?si=MXew_M5KQcUsGyBC&t=446
+    status: completed
+  - date: "2026-03-12"
+    jug: Chicago JUG
+    venue: with The AI Collective
+    location: Chicago, USA
+    topic: career
+    title: Developer Career Growth in the AI Age
+    guests: [Bruno Souza]
+    link: https://www.youtube.com/live/3HAiFk61fGM?si=LS0ap8rWnIslUycw&t=4520
+    status: completed
+  - date: "2026-08-19"
+    jug: Java Amazonas JUG
+    venue: live
+    location: Online
+    topic: career
+    title: "Beyond Code: Building a Personal Brand That Creates Opportunities"
+    link: https://www.youtube.com/watch?v=Ia8AD-cqC9M
+    status: completed
+  - date: "2026-08-22"
+    jug: Brasil JUG
+    venue: Recife
+    location: Recife, Brazil
+    topic: ai-first-sdlc
+    title: "The Future of Java Development: An AI-First SDLC"
+    link: https://www.youtube.com/live/tC3hXAV87tc?si=MGkSB_CZid5tJtYJ&t=7606
+    status: completed
+  - date: "2026-08-29"
+    jug: Java Noroeste JUG
+    venue: JavaDay Noroeste
+    location: São José do Rio Preto, Brazil
+    topic: career
+    title: "The Power of Focus: Growing Through Open Source and Community"
+    link: https://www.sympla.com.br/evento/8-java-day-2026-sao-jose-do-rio-preto-sp/3502847
+    status: completed
+  - date: "2026-09-29"
+    jug: Quarkus Club
+    venue: at IBM
+    location: São Paulo, Brazil
+    topic: fundamentals
+    title: "Software Engineering in the Age of AI: Risks and Opportunities (shared talk)"
+    status: completed
+  - date: "2026-10-26"
+    jug: Out of the Box Developer Podcast
+    location: Online
+    topic: fundamentals
+    title: How to Become a Better Software Engineer in the Age of AI
+    guests: [Professor Isidro]
+    link: https://www.youtube.com/watch?v=ST61ZJUSLKY
+    status: completed
+  - date: "2026-10-28"
+    jug: Tamilnadu JUG
+    location: India
+    topic: fundamentals
+    title: How to Become a Better Software Engineer in the Age of AI
+    guests: [Professor Isidro]
+    link: https://www.youtube.com/watch?v=PyDT_ox-UJ4
+    status: completed

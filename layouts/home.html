@@ -1,0 +1,207 @@
+{{ define "main" }}
+{{ $stops := hugo.Data.journey.stops }}
+{{ $talks := hugo.Data.talks.talks }}
+{{ $goal := site.Params.goal }}
+{{ $visited := slice }}
+{{ range where $stops "status" "completed" }}{{ $visited = $visited | append .jug }}{{ end }}
+{{ $count := len (uniq $visited) }}
+{{ $pct := div (mul (float $count) 100) $goal }}
+{{ $issues := printf "%s/issues/new" site.Params.repo }}
+
+<header class="masthead">
+  <nav class="topnav" aria-label="Sections">
+    <a href="#talks">Talks</a>
+    <a href="#journey">Journey</a>
+    <a href="#guests">Guests</a>
+    <a href="#invite">Invite</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="title-page">
+    {{ partial "balloon.html" "balloon" }}
+    <p class="kicker">Being the Voyage of Mr. Luiz Real &amp; Companions</p>
+    <h1>Around the World<br><span class="in">in</span> <span class="eighty">80</span> JUGs</h1>
+    <p class="ornament" aria-hidden="true">❦ ✦ ❦</p>
+    <p class="lede">Luiz Real and guests visit Java User Groups around the world — virtually or in person — to help developers become better software engineers in the age of AI.</p>
+    <p class="motto"><strong>AI is a tool.</strong> Engineers with strong fundamentals can guide it, review its output, and use it responsibly. Start asking the right questions.</p>
+
+    <div class="voyage" role="group" aria-label="Progress">
+      <p class="voyage-count"><span class="big">{{ $count }}</span> / {{ $goal }} JUGs visited</p>
+      <div class="track" role="progressbar" aria-valuemin="0" aria-valuemax="{{ $goal }}" aria-valuenow="{{ $count }}" aria-label="JUGs visited">
+        <div class="track-fill" style="width: {{ $pct }}%"></div>
+        <span class="track-marker" style="left: {{ $pct }}%">{{ partial "balloon.html" "mini" }}</span>
+      </div>
+      <div class="track-scale" aria-hidden="true">{{ range seq 0 20 $goal }}<span>{{ . }}</span>{{ end }}</div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#invite">Invite Luiz to your JUG</a>
+      <a class="btn" href="#be-a-guest">Join as a guest</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="mission" class="chapter">
+    <p class="chapter-no">Chapter I</p>
+    <h2>The Mission</h2>
+    <p>AI is changing how software is written, but it does not replace the engineer. This voyage exists to strengthen the fundamentals that never go out of style — and to celebrate the global Java community, one JUG, country, and culture at a time.</p>
+    <ul class="pillars">
+      <li><strong>Software design</strong> code that is easy to change</li>
+      <li><strong>Java</strong> the language and its ecosystem</li>
+      <li><strong>Testing</strong> confidence and safe refactoring</li>
+      <li><strong>Architecture</strong> trade-offs and boundaries</li>
+      <li><strong>Debugging</strong> understanding, not guessing</li>
+      <li><strong>Requirements</strong> the right questions first</li>
+      <li><strong>Critical thinking</strong> including about AI answers</li>
+    </ul>
+  </section>
+
+  <section id="talks" class="chapter">
+    <p class="chapter-no">Chapter II</p>
+    <h2>The Talks</h2>
+    {{ with index $talks 0 }}
+    <article class="ticket featured">
+      <p class="ticket-label">Main route · {{ .label }}</p>
+      <h3>{{ .title }}</h3>
+      <blockquote id="abstract-{{ .key }}">{{ .abstract }}</blockquote>
+      <button type="button" class="btn btn-small copy-btn" data-copy="abstract-{{ .key }}">Copy abstract</button>
+      <ul class="expect">
+        <li><strong>Practical</strong> — habits and examples you can apply right away.</li>
+        <li><strong>Community-oriented</strong> — an open conversation with room for questions.</li>
+        <li><strong>For all levels</strong> — from students to senior engineers and tech leads.</li>
+        <li><strong>In English</strong> — all sessions are delivered in English.</li>
+      </ul>
+    </article>
+    {{ end }}
+
+    <h3 class="sub">Other routes — topics built on the same fundamentals</h3>
+    {{ range after 1 $talks }}
+    {{ $key := .key }}
+    {{ $past := where (where $stops "topic" $key) "status" "completed" }}
+    <details class="fold">
+      <summary><span class="tag tag-{{ .key }}">{{ .label }}</span> {{ .title }}</summary>
+      <div class="fold-body">
+        {{ with .aka }}<p class="aka">{{ . }}</p>{{ end }}
+        <blockquote id="abstract-{{ .key }}">{{ .abstract }}</blockquote>
+        <button type="button" class="btn btn-small copy-btn" data-copy="abstract-{{ .key }}">Copy abstract</button>
+        {{ with $past }}
+        <p class="past-label">Previously presented at:</p>
+        <ul class="past">
+          {{ range sort . "date" "desc" }}<li><a href="{{ .link }}" target="_blank" rel="noopener">{{ .jug }}</a> · {{ time.Format "Jan 2006" .date }}</li>{{ end }}
+        </ul>
+        {{ end }}
+      </div>
+    </details>
+    {{ end }}
+  </section>
+
+  <section id="journey" class="chapter">
+    <p class="chapter-no">Chapter III</p>
+    <h2>The Journey</h2>
+    <p>Every stamp is a stop on the voyage. Filter by route:</p>
+    <div class="filters" role="toolbar" aria-label="Filter stops by topic">
+      <button type="button" class="chip is-active" data-filter="all" aria-pressed="true">All</button>
+      {{ range $talks }}<button type="button" class="chip" data-filter="{{ .key }}" aria-pressed="false">{{ .label }}</button>{{ end }}
+    </div>
+    <ol class="stamps" reversed>
+      {{ range sort $stops "date" "desc" }}
+      {{ $topic := .topic }}
+      {{ $label := "" }}{{ range where $talks "key" $topic }}{{ $label = .label }}{{ end }}
+      <li class="stamp stamp-{{ .topic }}" data-topic="{{ .topic }}">
+        <p class="stamp-date">{{ time.Format "02 Jan 2006" .date }}{{ if ne .status "completed" }} · Scheduled{{ end }}</p>
+        <h3 class="stamp-jug">{{ .jug }}</h3>
+        <p class="stamp-place">{{ .location }}{{ with .venue }} · {{ . }}{{ end }}</p>
+        <p class="stamp-title">{{ .title }}</p>
+        {{ with .guests }}<p class="stamp-guests">with {{ delimit . ", " }}</p>{{ end }}
+        <p class="stamp-foot"><span class="tag tag-{{ .topic }}">{{ $label }}</span>{{ with .link }} <a href="{{ . }}" target="_blank" rel="noopener">View ↗</a>{{ end }}</p>
+      </li>
+      {{ end }}
+      <li class="stamp stamp-open" data-topic="open">
+        <p class="stamp-date">Date TBA</p>
+        <h3 class="stamp-jug">Your JUG here?</h3>
+        <p class="stamp-place">Anywhere on the map</p>
+        <p class="stamp-foot"><a href="#invite">Invite us →</a></p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="guests" class="chapter">
+    <p class="chapter-no">Chapter IV</p>
+    <h2>Travelling Companions</h2>
+    <ul class="guests">
+      {{ range hugo.Data.guests.guests }}
+      <li class="guest">
+        <h3>{{ .name }}</h3>
+        <p class="guest-role">{{ .role }}</p>
+        <p class="guest-sessions">Sessions: {{ .sessions }}</p>
+        <p>{{ range $i, $l := .links }}{{ if $i }} · {{ end }}<a href="{{ $l.url }}" target="_blank" rel="noopener">{{ $l.label }}</a>{{ end }}</p>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+
+  <section id="invite" class="chapter">
+    <p class="chapter-no">Chapter V</p>
+    <h2>Join the Voyage</h2>
+
+    <details class="fold" open>
+      <summary>For JUG organizers — invite Luiz to your JUG</summary>
+      <div class="fold-body">
+        <dl class="facts">
+          <dt>Talk</dt><dd><em>{{ (index $talks 0).title }}</em> — or one of the other routes above</dd>
+          <dt>Duration</dt><dd>Flexible — suggested 45–60 minutes plus Q&amp;A</dd>
+          <dt>Format</dt><dd>Online talk or fireside chat, optionally with a guest co-speaker</dd>
+          <dt>Streaming</dt><dd>Your JUG's usual platform (Zoom, Google Meet, StreamYard, YouTube Live…). Share the link and a quick tech-check slot in advance. Recording is welcome if your JUG allows it.</dd>
+          <dt>Time zones</dt><dd>Propose a few dates/times in your local time zone with the UTC offset.</dd>
+          <dt>Language</dt><dd>English only.</dd>
+        </dl>
+        <ol class="steps">
+          <li>Open an issue titled <code>JUG invitation: &lt;Your JUG name&gt;</code>.</li>
+          <li>Include JUG name, city/country, proposed dates and times (with time zone), expected audience, streaming platform, and organizer contact.</li>
+          <li>Optionally, suggest a guest co-speaker — e.g. a JUG leader or Java Champion from your JUG.</li>
+          <li>Luiz will reply to confirm details and add your JUG to the journey.</li>
+        </ol>
+        <a class="btn btn-primary" href="{{ $issues }}?title={{ "JUG invitation: " | urlquery }}" target="_blank" rel="noopener">Open a JUG invitation</a>
+      </div>
+    </details>
+
+    <details class="fold" id="be-a-guest">
+      <summary>For potential guests — become a travelling companion</summary>
+      <div class="fold-body">
+        <p>Java Champions, JUG leaders, speakers, authors, and practitioners who care about fundamentals are welcome as co-speakers. Sessions are usually a <strong>live conversation</strong>, so no fancy slides are needed. You may share a call to action (your book, community, or project), but the session is not a commercial one.</p>
+        <p class="past-label">Topics that fit the mission:</p>
+        <ul class="topics">
+          <li>Software design &amp; clean code</li><li>Modern Java &amp; the JVM</li><li>Testing &amp; TDD</li>
+          <li>Architecture &amp; trade-offs</li><li>Debugging &amp; observability</li><li>Requirements &amp; communication</li>
+          <li>Reviewing AI-generated code</li><li>Career growth in the age of AI</li><li>Growing developer communities</li>
+        </ul>
+        <a class="btn btn-primary" href="{{ $issues }}?title={{ "Guest proposal: " | urlquery }}" target="_blank" rel="noopener">Propose yourself as a guest</a>
+      </div>
+    </details>
+  </section>
+
+  <section id="resources" class="chapter">
+    <p class="chapter-no">Chapter VI</p>
+    <h2>Travel Library</h2>
+    <ul class="library">
+      {{ range hugo.Data.links.resources }}<li><a href="{{ .url }}" target="_blank" rel="noopener"><em>{{ .label }}</em></a> — {{ .note }}</li>{{ end }}
+      <li class="muted">More recommended materials will be added along the journey.</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="chapter">
+    <p class="chapter-no">Chapter VII</p>
+    <h2>Send a Telegram</h2>
+    <p>The easiest way to reach Luiz is a <a href="{{ site.Params.repo }}/issues" target="_blank" rel="noopener">GitHub issue</a> — it keeps every invitation in one place.</p>
+    <ul class="contact">
+      {{ range hugo.Data.links.contact }}<li><span>{{ .label }}</span><a href="{{ .url }}"{{ if not (hasPrefix .url "mailto:") }} target="_blank" rel="noopener"{{ end }}>{{ .value }}</a></li>{{ end }}
+    </ul>
+  </section>
+</main>
+
+<footer class="colophon">
+  <p>Inspired by Jules Verne's <em>Around the World in Eighty Days</em> (1872).</p>
+  <p><a href="{{ site.Params.repo }}" target="_blank" rel="noopener">Source on GitHub</a> · MIT License</p>
+</footer>
+{{ end }}
