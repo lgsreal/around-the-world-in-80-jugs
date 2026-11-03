@@ -1,0 +1,17 @@
+guests:
+  - name: Luiz Real
+    role: Host · Forward Deployed Engineer · Oracle ACE · JUG Leader · Author
+    sessions: All
+    links:
+      - { label: GitHub, url: "https://github.com/lgsreal" }
+      - { label: LinkedIn, url: "https://www.linkedin.com/in/lgsreal/" }
+  - name: Professor Isidro
+    role: Professor · Java Champion
+    sessions: Quarkus Club, Out of the Box Developer Podcast, Tamilnadu JUG
+    links:
+      - { label: LinkedIn, url: "https://www.linkedin.com/in/professor-isidro-phd/" }
+  - name: Bruno Souza
+    role: Java Champion
+    sessions: Planned
+    links:
+      - { label: LinkedIn, url: "https://www.linkedin.com/in/brjavaman/" }

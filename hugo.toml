@@ -1,0 +1,9 @@
+baseURL = "https://lgsreal.github.io/around-the-world-in-80-jugs/"
+locale = "en-US"
+title = "Around the World in 80 JUGs"
+disableKinds = ["taxonomy", "term", "rss", "section", "page"]
+
+[params]
+  description = "Luiz Real and guests visit Java User Groups around the world to help developers become better software engineers in the age of AI."
+  goal = 80
+  repo = "https://github.com/lgsreal/around-the-world-in-80-jugs"

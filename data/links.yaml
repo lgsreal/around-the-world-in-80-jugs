@@ -1,0 +1,11 @@
+resources:
+  - { label: "Kickstart Software Engineering Fundamentals", note: "Book by Luiz Real", url: "https://luizreal.com/book-swe" }
+  - { label: "Java Web Internals", note: "Book by Professor Isidro", url: "https://www.packtpub.com/en-us/product/java-web-internals-9781835881491" }
+contact:
+  - { label: GitHub, value: "@lgsreal", url: "https://github.com/lgsreal" }
+  - { label: LinkedIn, value: "in/lgsreal", url: "https://www.linkedin.com/in/lgsreal/" }
+  - { label: X / Twitter, value: "@lgsreal", url: "https://x.com/lgsreal" }
+  - { label: YouTube, value: "@lgsreal", url: "https://www.youtube.com/@lgsreal" }
+  - { label: Email, value: "luiz@luizreal.com", url: "mailto:luiz@luizreal.com" }
+  - { label: Website, value: "luizreal.com", url: "https://luizreal.com" }
+  - { label: Blog, value: "thecommunity.dev", url: "https://thecommunity.dev" }

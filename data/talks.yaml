@@ -1,0 +1,32 @@
+# The first talk is the featured one. `key` matches `topic` in data/journey.yaml.
+talks:
+  - key: fundamentals
+    label: Fundamentals
+    title: How to Become a Better Software Engineer in the Age of AI
+    abstract: >-
+      AI assistants can generate code in seconds, but writing code was never the hardest part of
+      software engineering. Understanding problems, designing solutions, testing behavior, debugging
+      failures, and making sound architectural decisions still depend on the engineer. In this session,
+      Luiz Real explores how developers can grow into better software engineers in the age of AI by
+      strengthening their fundamentals. You will learn why AI is a powerful tool rather than a
+      replacement for engineering judgment, how strong fundamentals help you guide and review
+      AI-generated work, and practical habits you can apply right away in your day-to-day work.
+  - key: refactoring
+    label: Refactoring
+    title: "Refactor Today: Build Faster Tomorrow"
+    aka: Also presented as "Refactoring in Java" and "Myths and Truths about Refactoring".
+    abstract: >-
+      Messy code slows down every change, and AI tools can produce it faster than ever. Refactoring is
+      the fundamental skill that keeps a codebase easy to understand and safe to change. In this
+      session, Luiz Real shows how to recognize code smells, apply practical refactoring techniques in
+      Java, and rely on tests to improve design in small, safe steps — whether the code was written by
+      a teammate, by you years ago, or by an AI assistant.
+  - key: ai-first-sdlc
+    label: AI-First SDLC
+    title: "The Future of Java Development: An AI-First SDLC"
+    abstract: >-
+      AI is reshaping every phase of the software development life cycle, from requirements and design
+      to coding, testing, review, and delivery. In this session, Luiz Real walks through what an
+      AI-first SDLC looks like for Java teams, where AI agents add real leverage, and why fundamentals
+      such as clear specifications, good design, and solid tests are what make AI-assisted delivery
+      reliable.
