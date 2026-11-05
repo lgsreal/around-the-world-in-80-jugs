@@ -1,0 +1,80 @@
+{{- /* Journey map. Projection must match world-land.html: x = (lon + 130) * 3.2, y = (90 - lat) * 3.2. */ -}}
+{{- $stops := where hugo.Data.journey.stops "status" "completed" -}}
+{{- $ports := hugo.Data.ports.ports -}}
+{{- $talks := hugo.Data.talks.talks -}}
+{{- $k := 3.2 }}{{ $lon0 := 130.0 }}{{ $y0 := 96.0 }}{{ $w := 896.0 }}{{ $h := 320.0 -}}
+
+{{- $pts := slice -}}
+{{- range sort $stops "date" -}}
+  {{- range where $ports "jug" .jug -}}
+    {{- $pts = $pts | append (slice (dict "x" (mul (add .lon $lon0) $k) "y" (mul (sub 90.0 .lat) $k))) -}}
+  {{- end -}}
+{{- end -}}
+{{- $route := "" -}}
+{{- range $i, $b := $pts -}}
+  {{- if $i -}}
+    {{- $a := index $pts (sub $i 1) -}}
+    {{- if or (ne $a.x $b.x) (ne $a.y $b.y) -}}
+      {{- $dist := math.Sqrt (add (math.Pow (sub $b.x $a.x) 2) (math.Pow (sub $b.y $a.y) 2)) -}}
+      {{- $route = printf "%sM%.1f,%.1fQ%.1f,%.1f %.1f,%.1f" $route $a.x $a.y (div (add $a.x $b.x) 2) (sub (div (add $a.y $b.y) 2) (mul $dist 0.28)) $b.x $b.y -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $regions := slice -}}
+{{- range hugo.Data.ports.regions -}}
+  {{- $r := .name }}{{ $n := 0 -}}
+  {{- range where $ports "region" $r }}{{ if where $stops "jug" .jug }}{{ $n = add $n 1 }}{{ end }}{{ end -}}
+  {{- $regions = $regions | append (slice (dict "name" $r "n" $n "lat" .lat "lon" .lon "anchor" .anchor)) -}}
+{{- end -}}
+{{- $wire := slice -}}
+{{- range $stops }}{{ if not (where $ports "jug" .jug) }}{{ $wire = $wire | append .jug }}{{ end }}{{ end -}}
+{{- $wire = uniq $wire -}}
+
+<figure class="atlas">
+  <div class="atlas-map">
+    <svg viewBox="0 {{ $y0 }} {{ $w }} {{ $h }}" aria-labelledby="atlas-title">
+      <title id="atlas-title">Map of the JUGs visited so far</title>
+      <g class="grat" aria-hidden="true">
+        {{- range seq -120 30 150 }}{{ $x := mul (add . $lon0) $k }}<line x1="{{ $x }}" y1="{{ $y0 }}" x2="{{ $x }}" y2="{{ add $y0 $h }}"/>{{ end -}}
+        {{- range slice 30 0 -30 }}{{ $y := mul (sub 90 .) $k }}<line x1="0" y1="{{ $y }}" x2="{{ $w }}" y2="{{ $y }}"/>{{ end -}}
+      </g>
+      {{ partial "world-land.html" . }}
+      <path class="route" aria-hidden="true" d="{{ $route }}"/>
+      {{- range $ports }}
+      {{- $visits := sort (where $stops "jug" .jug) "date" }}
+      {{- if $visits }}
+      {{- $topics := slice }}{{ range $visits }}{{ $topics = $topics | append .topic }}{{ end }}{{ $topics = uniq $topics }}
+      {{- $names := slice }}{{ range $topics }}{{ $t := . }}{{ range where $talks "key" $t }}{{ $names = $names | append .label }}{{ end }}{{ end }}
+      {{- $latest := index (last 1 $visits) 0 }}
+      {{- $x := mul (add .lon $lon0) $k }}{{ $y := mul (sub 90.0 .lat) $k }}
+      {{- $detail := printf "%d visit%s · %s" (len $visits) (cond (eq (len $visits) 1) "" "s") (delimit $names ", ") }}
+      <g class="pin pin-{{ $latest.topic }}{{ if .virtual }} is-virtual{{ end }}" tabindex="0" role="button"
+         data-jug="{{ .jug }}" data-topics="{{ delimit $topics " " }}" data-city="{{ .city }}" data-detail="{{ $detail }}{{ if .virtual }} · virtual{{ end }}"
+         data-left="{{ printf "%.2f" (div (mul $x 100) $w) }}" data-top="{{ printf "%.2f" (div (mul (sub $y $y0) 100) $h) }}"
+         aria-label="{{ .jug }}, {{ .city }}: {{ $detail }}">
+        <circle cx="{{ printf "%.1f" $x }}" cy="{{ printf "%.1f" $y }}" r="5.5"/>
+      </g>
+      {{- end }}
+      {{- end }}
+      {{- with $pts }}{{ $p := index (last 1 .) 0 }}
+      <g class="atlas-balloon" aria-hidden="true" transform="translate({{ printf "%.1f" $p.x }} {{ printf "%.1f" $p.y }})">
+        <ellipse cx="0" cy="-30" rx="8" ry="9.5"/><path class="stripe" d="M-3,-30 Q0,-40 3,-30 Q0,-21 -3,-30"/>
+        <path class="rope" d="M-5,-23 L-2.5,-15 M5,-23 L2.5,-15"/><rect x="-2.8" y="-15" width="5.6" height="4"/>
+      </g>
+      {{- end }}
+      <g class="lbl" aria-hidden="true">
+        {{- range $regions }}{{ if .n }}<text x="{{ mul (add .lon $lon0) $k }}" y="{{ mul (sub 90 .lat) $k }}" text-anchor="{{ .anchor | default "middle" }}">{{ upper .name }} · {{ .n }}</text>{{ end }}{{ end -}}
+      </g>
+    </svg>
+    <div class="tip" role="status" hidden></div>
+  </div>
+  <figcaption class="atlas-key">
+    <p class="key-title">Ports of Call</p>
+    <ul>
+      {{- range $regions }}{{ if .n }}<li><span>{{ .name }}</span><b>{{ .n }}</b></li>{{ end }}{{ end }}
+      {{- with $wire }}<li title="{{ delimit . ", " }}"><span>Over the wire ✉</span><b>{{ len . }}</b></li>{{ end }}
+    </ul>
+    <p class="key-legend"><i class="dot"></i> in person &nbsp; <i class="dot hollow"></i> virtual<br>Pins mark each JUG's home city</p>
+  </figcaption>
+</figure>

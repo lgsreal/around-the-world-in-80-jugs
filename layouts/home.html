@@ -104,11 +104,12 @@
       <button type="button" class="chip is-active" data-filter="all" aria-pressed="true">All</button>
       {{ range $talks }}<button type="button" class="chip" data-filter="{{ .key }}" aria-pressed="false">{{ .label }}</button>{{ end }}
     </div>
+    {{ partial "atlas.html" . }}
     <ol class="stamps" reversed>
       {{ range sort $stops "date" "desc" }}
       {{ $topic := .topic }}
       {{ $label := "" }}{{ range where $talks "key" $topic }}{{ $label = .label }}{{ end }}
-      <li class="stamp stamp-{{ .topic }}" data-topic="{{ .topic }}">
+      <li class="stamp stamp-{{ .topic }}" data-topic="{{ .topic }}" data-jug="{{ .jug }}">
         <p class="stamp-date">{{ time.Format "02 Jan 2006" .date }}{{ if ne .status "completed" }} · Scheduled{{ end }}</p>
         <h3 class="stamp-jug">{{ .jug }}</h3>
         <p class="stamp-place">{{ .location }}{{ with .venue }} · {{ . }}{{ end }}</p>

@@ -230,6 +230,7 @@ The website is a [Hugo](https://gohugo.io/) site deployed to GitHub Pages by [`.
 |------|---------|
 | `data/journey.yaml` | Every stop (date, JUG, location, topic, guests, link, status). The site's counter is computed from it. |
 | `data/talks.yaml` | Main talk (first entry) and other topics, with abstracts. |
+| `data/ports.yaml` | Home city and coordinates of each JUG, used to place its pin on the journey map. |
 | `data/guests.yaml` | Host and guests. |
 | `data/links.yaml` | Resources and contact links. |
 
@@ -237,7 +238,7 @@ Preview locally with `hugo server` and open http://localhost:1313/around-the-wor
 
 **Maintainer workflow after each session:**
 
-1. Add or update the stop in `data/journey.yaml`.
+1. Add or update the stop in `data/journey.yaml`. For a new JUG, also add its home city to `data/ports.yaml` so it appears on the map.
 2. Update this README: the **progress counter** at the top (badge, `X / 80` text, and progress bar) and the **[Journey / Episodes](#journey--episodes)** table.
 3. Add any new guests to `data/guests.yaml` and the **[Guests](#guests)** table.
 4. Add new books or recommended materials to `data/links.yaml` and **[Resources](#resources)**.
