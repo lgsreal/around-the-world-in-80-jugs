@@ -11,7 +11,7 @@
 
 `███████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░` 18.75%
 
-🌍 **Website:** [lgsreal.github.io/around-the-world-in-80-jugs](https://lgsreal.github.io/around-the-world-in-80-jugs/)
+🌍 **Website:** [80jugs.thecommunity.dev](https://80jugs.thecommunity.dev/)
 
 > 📣 **Organize a JUG?** [Invite Luiz to your community](#for-jug-organizers) · **Want to join as a guest?** [See how to participate](#for-potential-guests)
 

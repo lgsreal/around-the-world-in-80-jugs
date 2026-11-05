@@ -8,7 +8,7 @@ body:
       value: |
         Welcome! Thanks for inviting Luiz Real to your Java User Group.
 
-        The suggested talk is *How to Become a Better Software Engineer in the Age of AI*, or another [talk from the journey](https://lgsreal.github.io/around-the-world-in-80-jugs/#talks). Sessions are flexible 45–60 minutes plus Q&A and can be an online talk or fireside chat, optionally with a guest co-speaker. Use your JUG's usual streaming platform. Recording is welcome if your JUG allows it. Sessions are delivered in English only.
+        The suggested talk is *How to Become a Better Software Engineer in the Age of AI*, or another [talk from the journey](https://80jugs.thecommunity.dev/#talks). Sessions are flexible 45–60 minutes plus Q&A and can be an online talk or fireside chat, optionally with a guest co-speaker. Use your JUG's usual streaming platform. Recording is welcome if your JUG allows it. Sessions are delivered in English only.
   - type: input
     id: jug_name
     attributes:
