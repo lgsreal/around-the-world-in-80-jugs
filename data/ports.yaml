@@ -1,0 +1,26 @@
+# Home city of each JUG, used to place it on the journey map.
+# Every JUG here with a completed stop in data/journey.yaml gets a pin; completed
+# JUGs missing from this list are counted as "Over the wire" (e.g. podcasts).
+# virtual: true = every visit so far was online (hollow pin).
+regions:
+  # Where each region's "NAME · count" label sits on the map.
+  - { name: Brazil, lat: -28, lon: -22, anchor: start }
+  - { name: North America, lat: 51, lon: -86, anchor: middle }
+  - { name: India, lat: 30, lon: 80, anchor: middle }
+
+ports:
+  - { jug: SouJava Brasília, city: "Brasília, Brazil", region: Brazil, lat: -15.79, lon: -47.88 }
+  - { jug: SouJava Campinas, city: "Campinas, Brazil", region: Brazil, lat: -22.91, lon: -47.06 }
+  - { jug: Brasil JUG, city: "Recife, Brazil", region: Brazil, lat: -8.05, lon: -34.88 }
+  - { jug: Quarkus Club, city: "São Paulo, Brazil", region: Brazil, lat: -23.55, lon: -46.63 }
+  # Nudged slightly from São Paulo's centre so it doesn't sit under Quarkus Club.
+  - { jug: São Paulo Java Meetup, city: "São Paulo, Brazil", region: Brazil, lat: -23.0, lon: -46.0 }
+  - { jug: UaiJUG, city: "Uberlândia, Brazil", region: Brazil, lat: -18.92, lon: -48.28, virtual: true }
+  - { jug: Java Noroeste JUG, city: "São José do Rio Preto, Brazil", region: Brazil, lat: -20.81, lon: -49.38 }
+  - { jug: Java Amazonas JUG, city: "Manaus, Brazil", region: Brazil, lat: -3.12, lon: -60.02, virtual: true }
+  - { jug: Java Maple Leafs, city: "Toronto, Canada", region: North America, lat: 43.65, lon: -79.38, virtual: true }
+  - { jug: Orlando JUG, city: "Orlando, USA", region: North America, lat: 28.54, lon: -81.38 }
+  - { jug: Chicago JUG, city: "Chicago, USA", region: North America, lat: 41.88, lon: -87.63 }
+  - { jug: Houston JUG, city: "Houston, USA", region: North America, lat: 29.76, lon: -95.37 }
+  - { jug: Garden State JUG, city: "New Jersey, USA", region: North America, lat: 40.06, lon: -74.41 }
+  - { jug: Tamilnadu JUG, city: "Chennai, India", region: India, lat: 13.08, lon: 80.27, virtual: true }
