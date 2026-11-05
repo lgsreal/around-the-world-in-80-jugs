@@ -1,0 +1,107 @@
+name: JUG invitation
+description: Invite Luiz Real to bring Around the World in 80 JUGs to your Java User Group
+title: "JUG invitation: "
+labels: ["jug-invitation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Welcome! Thanks for inviting Luiz Real to your Java User Group.
+
+        The suggested talk is *How to Become a Better Software Engineer in the Age of AI*, or another [talk from the journey](https://lgsreal.github.io/around-the-world-in-80-jugs/#talks). Sessions are flexible 45–60 minutes plus Q&A and can be an online talk or fireside chat, optionally with a guest co-speaker. Use your JUG's usual streaming platform. Recording is welcome if your JUG allows it. Sessions are delivered in English only.
+  - type: input
+    id: jug_name
+    attributes:
+      label: JUG name
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: City / country
+    validations:
+      required: true
+  - type: input
+    id: jug_links
+    attributes:
+      label: JUG website or social links
+  - type: dropdown
+    id: topic
+    attributes:
+      label: Topic
+      options:
+        - Fundamentals — How to Become a Better Software Engineer in the Age of AI (main talk)
+        - "Refactoring — Refactor Today: Build Faster Tomorrow"
+        - "AI-First SDLC — The Future of Java Development: An AI-First SDLC"
+        - Career — Grow Your Dev Career Building Visibility in the Java Community
+        - Not sure yet — let's talk
+    validations:
+      required: true
+  - type: textarea
+    id: dates
+    attributes:
+      label: Proposed dates and times
+      description: Propose a few options in your local time zone with the UTC offset.
+      placeholder: "2026-03-12 19:00 (UTC-3)"
+    validations:
+      required: true
+  - type: dropdown
+    id: format
+    attributes:
+      label: Format
+      options:
+        - Online talk
+        - Fireside chat
+        - Not sure yet
+    validations:
+      required: true
+  - type: input
+    id: audience
+    attributes:
+      label: Expected audience (size and level)
+  - type: input
+    id: platform
+    attributes:
+      label: Streaming platform
+      placeholder: Zoom, Google Meet, StreamYard, YouTube Live…
+    validations:
+      required: true
+  - type: dropdown
+    id: recording
+    attributes:
+      label: Can the session be recorded and published?
+      options:
+        - "Yes"
+        - "No"
+        - Not sure yet
+    validations:
+      required: true
+  - type: textarea
+    id: co_speaker
+    attributes:
+      label: Guest co-speaker suggestion (optional)
+      description: For example, a JUG leader or Java Champion from your JUG.
+  - type: input
+    id: organizer_contact
+    attributes:
+      label: Organizer name and contact
+      description: Email or social handle.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else?
+  - type: checkboxes
+    id: before_you_submit
+    attributes:
+      label: Before you submit
+      options:
+        - label: I understand sessions are delivered in English
+          required: true
+        - label: I'll share the streaming link and a quick tech-check slot in advance
+          required: true
+  - type: markdown
+    attributes:
+      value: |
+        Luiz will reply on this issue to confirm details, and your JUG will be added to the journey.

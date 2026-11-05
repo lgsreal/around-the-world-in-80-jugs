@@ -162,12 +162,12 @@
           <dt>Language</dt><dd>English only.</dd>
         </dl>
         <ol class="steps">
-          <li>Open an issue titled <code>JUG invitation: &lt;Your JUG name&gt;</code>.</li>
+          <li>Open a JUG invitation issue — the form asks for everything below.</li>
           <li>Include JUG name, city/country, proposed dates and times (with time zone), expected audience, streaming platform, and organizer contact.</li>
           <li>Optionally, suggest a guest co-speaker — e.g. a JUG leader or Java Champion from your JUG.</li>
           <li>Luiz will reply to confirm details and add your JUG to the journey.</li>
         </ol>
-        <a class="btn btn-primary" href="{{ $issues }}?title={{ "JUG invitation: " | urlquery }}" target="_blank" rel="noopener">Open a JUG invitation</a>
+        <a class="btn btn-primary" href="{{ $issues }}?template=jug-invitation.yml" target="_blank" rel="noopener">Open a JUG invitation</a>
       </div>
     </details>
 
@@ -181,7 +181,7 @@
           <li>Architecture &amp; trade-offs</li><li>Debugging &amp; observability</li><li>Requirements &amp; communication</li>
           <li>Reviewing AI-generated code</li><li>Career growth in the age of AI</li><li>Growing developer communities</li>
         </ul>
-        <a class="btn btn-primary" href="{{ $issues }}?title={{ "Guest proposal: " | urlquery }}" target="_blank" rel="noopener">Propose yourself as a guest</a>
+        <a class="btn btn-primary" href="{{ $issues }}?template=guest-proposal.yml" target="_blank" rel="noopener">Propose yourself as a guest</a>
       </div>
     </details>
   </section>
