@@ -1,4 +1,4 @@
-baseURL = "https://lgsreal.github.io/around-the-world-in-80-jugs/"
+baseURL = "https://80jugs.thecommunity.dev/"
 locale = "en-US"
 title = "Around the World in 80 JUGs"
 disableKinds = ["taxonomy", "term", "rss", "section", "page"]
