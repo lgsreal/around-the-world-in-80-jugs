@@ -175,7 +175,7 @@ Would you like **Around the World in 80 JUGs** to stop at your Java User Group? 
 
 **How to invite Luiz:**
 
-1. [Open an issue](https://github.com/lgsreal/around-the-world-in-80-jugs/issues/new) titled `JUG invitation: <Your JUG name>`.
+1. Open a [JUG invitation](https://github.com/lgsreal/around-the-world-in-80-jugs/issues/new?template=jug-invitation.yml) issue — the form asks for everything below.
 2. Include your JUG name, city/country, proposed dates and times (with time zone), expected audience, streaming platform, and organizer contact.
 3. Optionally, suggest a guest co-speaker — for example, a JUG leader or Java Champion from your JUG.
 4. Luiz will reply to confirm details and add your JUG to the [journey table](#journey--episodes).
@@ -202,7 +202,7 @@ The talk is usually delivered as a **live discussion / conversation**, so you do
 - Career growth and learning in the age of AI
 - Building and growing developer communities
 
-> 👉 **Interested?** [Open an issue](https://github.com/lgsreal/around-the-world-in-80-jugs/issues/new) titled `Guest proposal: <Your name>` with a short bio, topic ideas, and preferred time zone — or [contact Luiz](#contact) directly.
+> 👉 **Interested?** Fill in the [Guest proposal](https://github.com/lgsreal/around-the-world-in-80-jugs/issues/new?template=guest-proposal.yml) form with a short bio, topic ideas, and preferred time zone — or [contact Luiz](#contact) directly.
 
 ---
 
@@ -225,6 +225,8 @@ The talk is usually delivered as a **live discussion / conversation**, so you do
 ## Contributing / Updating the Repo
 
 The website is a [Hugo](https://gohugo.io/) site deployed to GitHub Pages by [`.github/workflows/hugo.yml`](.github/workflows/hugo.yml) on every push to `main`. Its content lives in `data/`:
+
+Issue forms live in `.github/ISSUE_TEMPLATE/`.
 
 | File | Content |
 |------|---------|

@@ -1,0 +1,75 @@
+name: Guest proposal
+description: Join a stop on the journey as a co-speaker or guest
+title: "Guest proposal: "
+labels: ["guest-proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Welcome! This form is for Java Champions, JUG leaders, speakers, authors, and practitioners who care about software engineering fundamentals.
+
+        The session is usually a live conversation, so no fancy slides are needed. A call to action is OK, but the session isn't commercial.
+  - type: input
+    id: guest_name
+    attributes:
+      label: Guest name
+    validations:
+      required: true
+  - type: input
+    id: role
+    attributes:
+      label: Role / recognition
+      placeholder: Java Champion, JUG leader at …
+  - type: textarea
+    id: bio
+    attributes:
+      label: Short bio
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: Links (GitHub, LinkedIn, website, talks…)
+  - type: checkboxes
+    id: topics
+    attributes:
+      label: Topics you'd like to discuss
+      options:
+        - label: Software design and clean, maintainable code
+        - label: Modern Java and the JVM ecosystem
+        - label: Testing strategies and test-driven development
+        - label: Software architecture and trade-offs
+        - label: Debugging and observability
+        - label: Requirements, communication, and working with product teams
+        - label: Critical thinking and reviewing AI-generated code
+        - label: Career growth and learning in the age of AI
+        - label: Building and growing developer communities
+  - type: textarea
+    id: other_topics
+    attributes:
+      label: Other topic ideas
+  - type: input
+    id: jug_preference
+    attributes:
+      label: A JUG or session you'd like to join (optional)
+  - type: input
+    id: timezone
+    attributes:
+      label: Preferred time zone (with UTC offset)
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: How can Luiz reach you?
+    validations:
+      required: true
+  - type: checkboxes
+    id: before_you_submit
+    attributes:
+      label: Before you submit
+      options:
+        - label: I understand the session is a live conversation in English
+          required: true
+        - label: Any call to action I share will be non-commercial
+          required: true
