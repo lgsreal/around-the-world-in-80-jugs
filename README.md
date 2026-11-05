@@ -226,8 +226,6 @@ The talk is usually delivered as a **live discussion / conversation**, so you do
 
 The website is a [Hugo](https://gohugo.io/) site deployed to GitHub Pages by [`.github/workflows/hugo.yml`](.github/workflows/hugo.yml) on every push to `main`. Its content lives in `data/`:
 
-Issue forms live in `.github/ISSUE_TEMPLATE/`.
-
 | File | Content |
 |------|---------|
 | `data/journey.yaml` | Every stop (date, JUG, location, topic, guests, link, status). The site's counter is computed from it. |
@@ -235,6 +233,8 @@ Issue forms live in `.github/ISSUE_TEMPLATE/`.
 | `data/ports.yaml` | Home city and coordinates of each JUG, used to place its pin on the journey map. |
 | `data/guests.yaml` | Host and guests. |
 | `data/links.yaml` | Resources and contact links. |
+
+The JUG invitation and guest proposal issue forms live in [`.github/ISSUE_TEMPLATE/`](.github/ISSUE_TEMPLATE/).
 
 Preview locally with `hugo server` and open http://localhost:1313/around-the-world-in-80-jugs/.
 
