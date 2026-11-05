@@ -32,8 +32,7 @@ jobs:
       - name: Build
         env:
           HUGO_ENVIRONMENT: production
-          BASE_URL: ${{ steps.pages.outputs.base_url }}
-        run: hugo --gc --minify ${BASE_URL:+--baseURL "$BASE_URL/"}
+        run: hugo --gc --minify
       - if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v5
         with:
