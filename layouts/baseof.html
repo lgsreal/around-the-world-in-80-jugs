@@ -20,10 +20,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Lora:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+  {{ with resources.Get "css/style.css" | fingerprint }}<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">{{ end }}
 </head>
 <body>
   {{ block "main" . }}{{ end }}
-  <script src="{{ "js/site.js" | relURL }}" defer></script>
+  {{ with resources.Get "js/site.js" | fingerprint }}<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>{{ end }}
 </body>
 </html>
