@@ -258,7 +258,7 @@ Preview locally with `hugo server` and open http://localhost:1313/around-the-wor
 - `sessions/` — per-session notes, links, and Q&A highlights
 - `assets/` — images, logos, and banners (Hugo also uses `assets/` for processed files)
 
-**Releases:** push a version tag and [`.github/workflows/release.yml`](.github/workflows/release.yml) publishes a GitHub release with notes generated from the merged PRs:
+**Releases:** [`.github/workflows/release.yml`](.github/workflows/release.yml) publishes a GitHub release with notes generated from the merged PRs. Either go to **Actions → Publish release → Run workflow**, keep the branch on `main` and enter a version such as `v1.1.0`, or push a version tag:
 
 ```sh
 git checkout main && git pull
