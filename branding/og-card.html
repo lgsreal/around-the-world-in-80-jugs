@@ -1,0 +1,43 @@
+<!doctype html>
+<!--
+  Link-preview / social-preview card for Around the World in 80 JUGs.
+  Edit the texts below (kicker, title, lede, url), then render it at the exact size with Playwright:
+    npx playwright install chromium   # once
+    npx playwright screenshot --viewport-size "1200, 630" --wait-for-timeout 2000 branding/og-card.html og.png      # -> static/og-image.jpg
+    npx playwright screenshot --viewport-size "1280, 640" --wait-for-timeout 2000 branding/og-card.html social.png  # -> GitHub social preview
+  Convert to JPEG if you like (e.g. ImageMagick: convert og.png -quality 85 static/og-image.jpg).
+-->
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Lora:ital,wght@0,400;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f3e7cf;--ink:#2b1d0e;--sepia:#7a4b2a;--brass:#b8862b;--burgundy:#7b1e1e;--navy:#1f3a5f}
+*{box-sizing:border-box;margin:0}
+html,body{width:100vw;height:100vh;overflow:hidden}
+body{background-color:var(--paper);color:var(--ink);font-family:Lora,Georgia,serif;
+background-image:radial-gradient(ellipse at 20% 10%,rgba(255,255,255,.5),transparent 60%),radial-gradient(ellipse at 85% 95%,rgba(122,75,42,.25),transparent 60%);
+display:flex;align-items:center;justify-content:center}
+.frame{position:absolute;inset:22px;border:3px solid var(--sepia);outline:1px solid var(--sepia);outline-offset:-12px}
+.card{display:flex;align-items:center;gap:56px;padding:0 90px;width:100%}
+svg{width:250px;height:333px;flex:none;filter:drop-shadow(6px 8px 0 rgba(122,75,42,.25))}
+.kicker{font-family:"Special Elite",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--sepia);font-size:22px}
+h1{font-family:"Playfair Display",serif;font-weight:800;font-size:92px;line-height:1.02;margin:14px 0 10px}
+h1 .in{font-style:italic;font-weight:600;font-size:.6em}
+h1 .eighty{color:var(--burgundy)}
+.orn{color:var(--brass);font-size:26px;letter-spacing:.4em}
+.lede{font-size:27px;line-height:1.4;margin-top:10px;max-width:700px}
+.url{font-family:"Special Elite",monospace;color:var(--navy);font-size:24px;margin-top:18px}
+</style></head><body><div class="frame"></div><div class="card">
+<svg viewBox="0 0 120 160">
+  <path d="M60 4C28 4 8 28 8 56c0 28 28 48 38 62h28c10-14 38-34 38-62C112 28 92 4 60 4z" fill="#7b1e1e" stroke="#2b1d0e" stroke-width="3"/>
+  <path d="M60 4C44 20 38 90 46 118h28c8-28 2-98-14-114z" fill="#b8862b" stroke="#2b1d0e" stroke-width="2.5"/>
+  <path d="M60 4c-4 30-4 84 0 114" fill="none" stroke="#2b1d0e" stroke-width="2"/>
+  <path d="M12 70q48 22 96 0" fill="none" stroke="#2b1d0e" stroke-width="2.5"/>
+  <path d="M46 118l4 20M74 118l-4 20M56 118v20M64 118v20" stroke="#2b1d0e" stroke-width="2"/>
+  <rect x="46" y="136" width="28" height="18" rx="2" fill="#7a4b2a" stroke="#2b1d0e" stroke-width="2.5"/>
+  <path d="M46 143h28" stroke="#2b1d0e" stroke-width="1.5"/>
+</svg>
+<div><p class="kicker">The Voyage of Luiz Real &amp; Companions</p>
+<h1>Around the World <span class="in">in</span> <span class="eighty">80</span> JUGs</h1>
+<p class="orn">❦ ✦ ❦</p>
+<p class="lede">Visiting Java User Groups to help developers become better software engineers in the age of AI.</p>
+<p class="url">80jugs.thecommunity.dev</p></div></div></body></html>

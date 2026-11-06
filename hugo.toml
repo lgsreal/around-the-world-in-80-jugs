@@ -8,7 +8,6 @@ disableKinds = ["taxonomy", "term", "rss", "section", "page"]
   goal = 80
   repo = "https://github.com/lgsreal/around-the-world-in-80-jugs"
   # Who is travelling — used on the title page, buttons, contact text and issue notices
-  name = "Luiz Real"
   firstName = "Luiz"
   email = "luiz@luizreal.com"
   kicker = "Being the Voyage of Mr. Luiz Real & Companions"

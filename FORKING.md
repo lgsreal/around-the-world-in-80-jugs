@@ -14,7 +14,7 @@ In **Settings → Pages**, set **Source** to **GitHub Actions**. Do not choose *
 
 Set `baseURL` to `https://<user>.github.io/<repo>/` (including the trailing slash), or to your custom domain. The workflow uses this value as-is, so links and previews will break if you leave Luiz's domain in place.
 
-Update `title` and every `[params]` key for your site: `description`, `goal`, `repo`, `name`, `firstName`, `email`, `kicker`, and `lede`.
+Update `title` and every `[params]` key for your site: `description`, `goal`, `repo`, `firstName`, `email`, `kicker`, and `lede`.
 
 ## 4. Replace the data
 
@@ -41,13 +41,15 @@ Or add them through **Issues → Labels**.
 
 Replace `static/og-image.jpg` (1200×630, used for link previews) and `static/favicon.svg`.
 
-`branding/og-card.html` is the source card. Edit its text, then render it with:
+`branding/og-card.html` is the source card. Edit its text, then render it at the exact size with [Playwright](https://playwright.dev/):
 
 ```sh
-google-chrome --headless --screenshot=og.png --window-size=1200,630 branding/og-card.html
+npx playwright install chromium
+npx playwright screenshot --viewport-size "1200, 630" --wait-for-timeout 2000 branding/og-card.html og.png
+npx playwright screenshot --viewport-size "1280, 640" --wait-for-timeout 2000 branding/og-card.html social.png
 ```
 
-For the GitHub social preview, render at 1280×640 and upload the image under **Settings → General → Social preview**.
+Convert `og.png` to `static/og-image.jpg`, and keep it well under 300 KB so WhatsApp shows it. Upload `social.png` under **Settings → General → Social preview** as the GitHub social preview. `branding/social-preview.png` is the one used by this repository.
 
 ## 7. Rewrite the README
 
@@ -55,7 +57,7 @@ Rewrite the README for your journey. Its progress counter and tables are updated
 
 ## 8. Update the About section
 
-Set the repository description, website, and topics. Tick **Use your GitHub Pages website**.
+Set the repository description, website, and topics, and tick **Settings → General → Template repository** if you want others to start from your copy too. Tick **Use your GitHub Pages website**.
 
 ## 9. Optional: add a custom domain
 
