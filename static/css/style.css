@@ -104,31 +104,17 @@ main { max-width: 60rem; margin: 0 auto; padding: 0 1.25rem; }
 h2 { font-family: var(--display); font-size: clamp(1.8rem, 4.5vw, 2.4rem); text-align: center; margin: .1rem 0 1.2rem; }
 h2::after { content: "❧"; display: block; color: var(--brass); font-size: 1.1rem; }
 h3 { font-family: var(--display); }
-.sub { text-align: center; font-size: 1.2rem; margin: 2rem 0 .8rem; color: var(--sepia); font-style: italic; }
 
 .pillars { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: .6rem; }
 .pillars li { padding: .6rem .8rem; border-left: 3px solid var(--brass); background: rgba(255, 250, 238, .5); }
 .pillars strong { display: block; font-family: var(--display); }
 
-/* Ticket */
-.ticket {
-  position: relative; padding: 1.6rem 1.6rem 1.2rem;
-  background: #fbf3e1; border: 2px solid var(--ink);
-  box-shadow: 6px 6px 0 rgba(43, 29, 14, .85);
-}
-.ticket::before, .ticket::after {
-  content: ""; position: absolute; top: 50%; width: 22px; height: 22px; margin-top: -11px;
-  background: var(--paper); border: 2px solid var(--ink); border-radius: 50%;
-}
-.ticket::before { left: -13px; clip-path: inset(0 0 0 50%); }
-.ticket::after { right: -13px; clip-path: inset(0 50% 0 0); }
-.ticket-label { font-family: var(--type); text-transform: uppercase; letter-spacing: .12em; color: var(--burgundy); margin: 0; font-size: .85rem; }
-.ticket h3 { font-size: clamp(1.4rem, 3.5vw, 1.9rem); margin: .3rem 0 .8rem; line-height: 1.2; }
 blockquote { margin: 0 0 .8rem; padding: .2rem 0 .2rem 1rem; border-left: 3px solid var(--brass); font-style: italic; }
 .expect { padding-left: 1.2rem; margin-bottom: 0; }
 
 /* Collapsible sections */
 .fold { margin: .8rem 0; border: 1.5px solid var(--sepia); background: rgba(255, 250, 238, .55); }
+.fold-main { border: 2px solid var(--burgundy); }
 .fold > summary {
   cursor: pointer; list-style: none;
   padding: .85rem 2.6rem .85rem 1rem; position: relative;
@@ -142,6 +128,11 @@ blockquote { margin: 0 0 .8rem; padding: .2rem 0 .2rem 1rem; border-left: 3px so
 .aka { font-size: .95rem; color: var(--sepia); margin-top: 0; }
 .past-label { font-family: var(--type); margin: 1rem 0 .3rem; }
 .past { margin: 0; padding-left: 1.2rem; }
+.star { color: var(--brass); margin-right: .3rem; }
+.main-route {
+  display: inline-block; margin-left: .5rem; font: .75rem var(--type);
+  text-transform: uppercase; letter-spacing: .12em; color: var(--burgundy);
+}
 
 .tag {
   display: inline-block; font: .72rem var(--type); letter-spacing: .08em; text-transform: uppercase;
@@ -256,5 +247,4 @@ blockquote { margin: 0 0 .8rem; padding: .2rem 0 .2rem 1rem; border-left: 3px so
   .title-page { margin: 1rem .75rem; padding: 2rem 1rem 1.5rem; }
   .facts { grid-template-columns: 1fr; gap: 0; }
   .facts dd { margin-bottom: .6rem; }
-  .ticket { padding: 1.3rem 1.1rem 1rem; }
 }

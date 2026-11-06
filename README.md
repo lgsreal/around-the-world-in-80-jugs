@@ -4,12 +4,12 @@
 
 **AI is a tool.** Engineers with strong fundamentals can guide it, review its output, and use it responsibly and effectively. Without those fundamentals, it is easy to ship code that fails in production. Start asking the right questions to properly guide AI.
 
-![JUGs visited](https://img.shields.io/badge/JUGs%20visited-15%20%2F%2080-orange?style=for-the-badge&logo=openjdk&logoColor=white)
+![JUGs visited](https://img.shields.io/badge/JUGs%20visited-16%20%2F%2080-orange?style=for-the-badge&logo=openjdk&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 
-**Progress: 15 / 80 JUGs visited**
+**Progress: 16 / 80 JUGs visited**
 
-`███████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░` 18.75%
+`████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░` 20%
 
 🌍 **Website:** [80jugs.thecommunity.dev](https://80jugs.thecommunity.dev/)
 
@@ -38,12 +38,15 @@
 AI is changing how software is written, but it does not replace the engineer. **Around the World in 80 JUGs** exists to help developers become better software engineers in the age of AI by strengthening the fundamentals that never go out of style:
 
 - **Software design** — modeling, abstraction, and code that is easy to change
+- **Design patterns** — proven solutions to recurring problems, applied with judgment
 - **Java** — the language, the platform, and its ecosystem
 - **Testing** — confidence, feedback loops, and safe refactoring
 - **Architecture** — trade-offs, boundaries, and long-term maintainability
+- **Security** — secure by design, including in AI-generated code
 - **Debugging** — understanding systems instead of guessing
 - **Requirements** — asking the right questions before writing code
 - **Critical thinking** — evaluating answers, including the ones an AI gives you
+- **Career** — growing your skills, visibility, and impact as an engineer
 
 The project is also a celebration of the **global Java community**. Every stop on the journey is a different JUG, country, and culture — and a chance to share knowledge, learn from local communities, and connect developers across borders.
 
@@ -86,9 +89,11 @@ Previously presented at Garden State JUG, Houston JUG, Chicago JUG, Java Noroest
 
 <br>
 
+Also presented as *People-First Software Engineering: 10x Your Team's Delivery with AI Agents*.
+
 > Writing code is only a small part of modern software development. In this talk, we will explore how an AI-First approach redefines the entire SDLC for Java applications, showing how developers can leverage AI at every stage of the process to increase productivity, quality, and delivery capabilities without compromising critical thinking or sound engineering practices.
 
-Previously presented at Brasil JUG (Recife) (see [Journey](#journey--episodes)).
+Previously presented at JCON (at IBM TechXchange, Atlanta) and Brasil JUG (Recife) (see [Journey](#journey--episodes)).
 
 </details>
 
@@ -131,7 +136,8 @@ Previously presented at Java Noroeste JUG, Java Amazonas JUG, Chicago JUG (with 
 | 17 | September 29, 2026 | Quarkus Club (at IBM) — shared talk | São Paulo, Brazil | Fundamentals | — | TBA | ✅ Completed |
 | 18 | October 26, 2026 | [Out of the Box Developer Podcast](https://outofthebox.dev) | Online | Fundamentals | Professor Isidro | [Watch](https://www.youtube.com/watch?v=ST61ZJUSLKY) | ✅ Completed |
 | 19 | October 28, 2026 | Tamilnadu JUG | India | Fundamentals | Professor Isidro | [Watch](https://www.youtube.com/watch?v=PyDT_ox-UJ4) | ✅ Completed |
-| 20 | TBA | *Your JUG here?* [Invite us](#for-jug-organizers) | TBA | TBA | TBA | — | 🔜 Open |
+| 20 | October 29, 2026 | JCON (at IBM TechXchange) | Atlanta, USA | AI-First SDLC | — | [View](https://reg.tools.ibm.com/flow/ibm/techxchange26/sessioncatalog/page/sessioncatalog/session/1788904890904001K4Qj) | ✅ Completed |
+| 21 | TBA | *Your JUG here?* [Invite us](#for-jug-organizers) | TBA | TBA | TBA | — | 🔜 Open |
 
 The progress counter counts **unique JUGs** (Brasil JUG, Quarkus Club, Chicago JUG, and Java Noroeste JUG were visited twice).
 
