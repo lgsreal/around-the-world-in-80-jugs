@@ -65,7 +65,7 @@ Add a CNAME DNS record pointing to `<user>.github.io`, set the domain in **Setti
 
 ## 10. Preview locally
 
-Run `hugo server`, then open http://localhost:1313/.
+Run `hugo server` and open the address it prints. The path follows your `baseURL`: with `https://<user>.github.io/<repo>/` it is http://localhost:1313/<repo>/, and with a custom domain at the root it is http://localhost:1313/.
 
 ## 11. Keep the credit
 
