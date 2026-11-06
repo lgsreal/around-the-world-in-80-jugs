@@ -156,6 +156,8 @@ The progress counter counts **unique JUGs** (Brasil JUG, Quarkus Club, Chicago J
 |----------|-------------|------|
 | 📘 Book | *Kickstart Software Engineering Fundamentals* by Luiz Real | [luizreal.com/book-swe](https://luizreal.com/book-swe) |
 | 📘 Book | *Java Web Internals* by Professor Isidro | [Packt](https://www.packtpub.com/en-us/product/java-web-internals-9781835881491) |
+| 📘 Ebook | *Java Fullstack 2027* by Vincent Vauban | [javafullstack2027.mystrikingly.com](https://javafullstack2027.mystrikingly.com/) |
+| 📘 Book | *Dev Career Masterplan* by Bruno Souza and Heather VanCura | [careermasterplan.dev](https://www.careermasterplan.dev/) |
 | 📚 Recommended materials | Books, talks, and links recommended by Luiz and guests | TBA |
 
 ---
