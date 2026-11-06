@@ -48,47 +48,41 @@
     <p>AI is changing how software is written, but it does not replace the engineer. This voyage exists to strengthen the fundamentals that never go out of style — and to celebrate the global Java community, one JUG, country, and culture at a time.</p>
     <ul class="pillars">
       <li><strong>Software design</strong> code that is easy to change</li>
+      <li><strong>Design patterns</strong> proven solutions, used with judgment</li>
       <li><strong>Java</strong> the language and its ecosystem</li>
       <li><strong>Testing</strong> confidence and safe refactoring</li>
       <li><strong>Architecture</strong> trade-offs and boundaries</li>
+      <li><strong>Security</strong> safe by design, not an afterthought</li>
       <li><strong>Debugging</strong> understanding, not guessing</li>
       <li><strong>Requirements</strong> the right questions first</li>
       <li><strong>Critical thinking</strong> including about AI answers</li>
+      <li><strong>Career</strong> growing your skills, visibility and impact</li>
     </ul>
   </section>
 
   <section id="talks" class="chapter">
     <p class="chapter-no">Chapter II</p>
     <h2>The Talks</h2>
-    {{ with index $talks 0 }}
-    <article class="ticket featured">
-      <p class="ticket-label">Main route · {{ .label }}</p>
-      <h3>{{ .title }}</h3>
-      <blockquote id="abstract-{{ .key }}">{{ .abstract }}</blockquote>
-      <button type="button" class="btn btn-small copy-btn" data-copy="abstract-{{ .key }}">Copy abstract</button>
-      <ul class="expect">
-        <li><strong>Practical</strong> — habits and examples you can apply right away.</li>
-        <li><strong>Community-oriented</strong> — an open conversation with room for questions.</li>
-        <li><strong>For all levels</strong> — from students to senior engineers and tech leads.</li>
-        <li><strong>In English</strong> — all sessions are delivered in English.</li>
-      </ul>
-    </article>
-    {{ end }}
-
-    <h3 class="sub">Other routes — topics built on the same fundamentals</h3>
-    {{ range after 1 $talks }}
-    {{ $key := .key }}
-    {{ $past := where (where $stops "topic" $key) "status" "completed" }}
-    <details class="fold">
-      <summary><span class="tag tag-{{ .key }}">{{ .label }}</span> {{ .title }}</summary>
+    {{ range $i, $talk := $talks }}
+    {{ $past := where (where $stops "topic" $talk.key) "status" "completed" }}
+    <details class="fold{{ if eq $i 0 }} fold-main{{ end }}">
+      <summary><span class="tag tag-{{ $talk.key }}">{{ $talk.label }}</span> {{ $talk.title }}{{ if eq $i 0 }} <span class="main-route">Main route</span>{{ end }}</summary>
       <div class="fold-body">
-        {{ with .aka }}<p class="aka">{{ . }}</p>{{ end }}
-        <blockquote id="abstract-{{ .key }}">{{ .abstract }}</blockquote>
-        <button type="button" class="btn btn-small copy-btn" data-copy="abstract-{{ .key }}">Copy abstract</button>
+        {{ with $talk.aka }}<p class="aka">{{ . }}</p>{{ end }}
+        <blockquote id="abstract-{{ $talk.key }}">{{ $talk.abstract }}</blockquote>
+        <button type="button" class="btn btn-small copy-btn" data-copy="abstract-{{ $talk.key }}">Copy abstract</button>
+        {{ if eq $i 0 }}
+        <ul class="expect">
+          <li><strong>Practical</strong> — habits and examples you can apply right away.</li>
+          <li><strong>Community-oriented</strong> — an open conversation with room for questions.</li>
+          <li><strong>For all levels</strong> — from students to senior engineers and tech leads.</li>
+          <li><strong>In English</strong> — all sessions are delivered in English.</li>
+        </ul>
+        {{ end }}
         {{ with $past }}
         <p class="past-label">Previously presented at:</p>
         <ul class="past">
-          {{ range sort . "date" "desc" }}<li><a href="{{ .link }}" target="_blank" rel="noopener">{{ .jug }}</a> · {{ time.Format "Jan 2006" .date }}</li>{{ end }}
+          {{ range sort . "date" "desc" }}{{ $stop := . }}<li>{{ with $stop.link }}<a href="{{ . }}" target="_blank" rel="noopener">{{ $stop.jug }}</a>{{ else }}{{ $stop.jug }}{{ end }} · {{ time.Format "Jan 2006" $stop.date }}</li>{{ end }}
         </ul>
         {{ end }}
       </div>
@@ -150,11 +144,11 @@
     <p class="chapter-no">Chapter V</p>
     <h2>Join the Voyage</h2>
 
-    <details class="fold" open>
+    <details class="fold">
       <summary>For JUG organizers — invite {{ site.Params.firstName }} to your JUG</summary>
       <div class="fold-body">
         <dl class="facts">
-          <dt>Talk</dt><dd><em>{{ (index $talks 0).title }}</em> — or one of the other routes above</dd>
+          <dt>Talk</dt><dd><em>{{ (index $talks 0).title }}</em> — or one of the other talks above</dd>
           <dt>Duration</dt><dd>Flexible — suggested 45–60 minutes plus Q&amp;A</dd>
           <dt>Format</dt><dd>Online talk or fireside chat, optionally with a guest co-speaker</dd>
           <dt>Streaming</dt><dd>Your JUG's usual platform (Zoom, Google Meet, StreamYard, YouTube Live…). Send the link and a quick tech-check slot by email in advance. Recording is welcome if your JUG allows it.</dd>

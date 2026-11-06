@@ -23,4 +23,5 @@ ports:
   - { jug: Chicago JUG, city: "Chicago, USA", region: North America, lat: 41.88, lon: -87.63 }
   - { jug: Houston JUG, city: "Houston, USA", region: North America, lat: 29.76, lon: -95.37 }
   - { jug: Garden State JUG, city: "New Jersey, USA", region: North America, lat: 40.06, lon: -74.41 }
+  - { jug: JCON, city: "Atlanta, USA", region: North America, lat: 33.75, lon: -84.39 }
   - { jug: Tamilnadu JUG, city: "Chennai, India", region: India, lat: 13.08, lon: 80.27, virtual: true }

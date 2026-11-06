@@ -153,3 +153,11 @@ stops:
     guests: [Professor Isidro]
     link: https://www.youtube.com/watch?v=PyDT_ox-UJ4
     status: completed
+  - date: "2026-10-29"
+    jug: JCON
+    venue: at IBM TechXchange
+    location: Atlanta, USA
+    topic: ai-first-sdlc
+    title: "People-First Software Engineering: 10x Your Team's Delivery with AI Agents"
+    link: https://reg.tools.ibm.com/flow/ibm/techxchange26/sessioncatalog/page/sessioncatalog/session/1788904890904001K4Qj
+    status: completed

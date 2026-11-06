@@ -23,6 +23,7 @@ talks:
   - key: ai-first-sdlc
     label: AI-First SDLC
     title: "The Future of Java Development: An AI-First SDLC"
+    aka: "Also presented as \"People-First Software Engineering: 10x Your Team's Delivery with AI Agents\"."
     abstract: >-
       Writing code is only a small part of modern software development. In this talk, we will explore
       how an AI-First approach redefines the entire SDLC for Java applications, showing how developers
