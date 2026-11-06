@@ -28,6 +28,7 @@
 - [For Potential Guests](#for-potential-guests)
 - [Contact](#contact)
 - [Contributing / Updating the Repo](#contributing--updating-the-repo)
+- [Start Your Own Journey](#start-your-own-journey)
 - [License](#license)
 
 ---
@@ -242,7 +243,7 @@ The website is a [Hugo](https://gohugo.io/) site deployed to GitHub Pages by [`.
 
 The JUG invitation and guest proposal issue forms live in [`.github/ISSUE_TEMPLATE/`](.github/ISSUE_TEMPLATE/).
 
-Preview locally with `hugo server` and open http://localhost:1313/around-the-world-in-80-jugs/.
+Preview locally with `hugo server` and open http://localhost:1313/.
 
 **Maintainer workflow after each session:**
 
@@ -259,6 +260,12 @@ Preview locally with `hugo server` and open http://localhost:1313/around-the-wor
 - `assets/` — images, logos, and banners (Hugo also uses `assets/` for processed files)
 
 Suggestions and corrections are welcome — feel free to [open an issue](https://github.com/lgsreal/around-the-world-in-80-jugs/issues) or a pull request.
+
+---
+
+## Start Your Own Journey
+
+Use this site as a template or fork to start a tour for your own community. Update the identity, data, and repository settings for your journey; see the [forking guide](FORKING.md) for the steps.
 
 ---
 

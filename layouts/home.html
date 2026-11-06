@@ -19,10 +19,10 @@
 
   <div class="title-page">
     {{ partial "balloon.html" "balloon" }}
-    <p class="kicker">Being the Voyage of Mr. Luiz Real &amp; Companions</p>
-    <h1>Around the World<br><span class="in">in</span> <span class="eighty">80</span> JUGs</h1>
+    <p class="kicker">{{ site.Params.kicker }}</p>
+    <h1>Around the World<br><span class="in">in</span> <span class="eighty">{{ $goal }}</span> JUGs</h1>
     <p class="ornament" aria-hidden="true">❦ ✦ ❦</p>
-    <p class="lede">Luiz Real and guests visit Java User Groups around the world — virtually or in person — to help developers become better software engineers in the age of AI.</p>
+    <p class="lede">{{ site.Params.lede }}</p>
     <p class="motto"><strong>AI is a tool.</strong> Engineers with strong fundamentals can guide it, review its output, and use it responsibly. Start asking the right questions.</p>
 
     <div class="voyage" role="group" aria-label="Progress">
@@ -35,7 +35,7 @@
     </div>
 
     <div class="cta-row">
-      <a class="btn btn-primary" href="#invite">Invite Luiz to your JUG</a>
+      <a class="btn btn-primary" href="#invite">Invite {{ site.Params.firstName }} to your JUG</a>
       <a class="btn" href="#be-a-guest">Join as a guest</a>
     </div>
   </div>
@@ -151,7 +151,7 @@
     <h2>Join the Voyage</h2>
 
     <details class="fold" open>
-      <summary>For JUG organizers — invite Luiz to your JUG</summary>
+      <summary>For JUG organizers — invite {{ site.Params.firstName }} to your JUG</summary>
       <div class="fold-body">
         <dl class="facts">
           <dt>Talk</dt><dd><em>{{ (index $talks 0).title }}</em> — or one of the other routes above</dd>
@@ -165,9 +165,9 @@
           <li>Open a JUG invitation issue — the form asks for everything below.</li>
           <li>Include JUG name, city/country, proposed dates and times (with time zone), expected audience, streaming platform, and a public organizer contact (GitHub handle or profile).</li>
           <li>Optionally, suggest a guest co-speaker — e.g. a JUG leader or Java Champion from your JUG.</li>
-          <li>Luiz will reply to confirm details and add your JUG to the journey.</li>
+          <li>{{ site.Params.firstName }} will reply to confirm details and add your JUG to the journey.</li>
         </ol>
-        <p class="muted">Issues are public. Don't include phone numbers, personal emails, addresses or meeting passwords. Send private details to <a href="mailto:luiz@luizreal.com">luiz@luizreal.com</a> once Luiz replies.</p>
+        <p class="muted">Issues are public. Don't include phone numbers, personal emails, addresses or meeting passwords. Send private details to <a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a> once {{ site.Params.firstName }} replies.</p>
         <a class="btn btn-primary" href="{{ $issues }}?template=jug-invitation.yml" target="_blank" rel="noopener">Open a JUG invitation</a>
       </div>
     </details>
@@ -182,7 +182,7 @@
           <li>Architecture &amp; trade-offs</li><li>Debugging &amp; observability</li><li>Requirements &amp; communication</li>
           <li>Reviewing AI-generated code</li><li>Career growth in the age of AI</li><li>Growing developer communities</li>
         </ul>
-        <p class="muted">Issues are public. Don't include phone numbers, personal emails, addresses or meeting passwords. Send private details to <a href="mailto:luiz@luizreal.com">luiz@luizreal.com</a> once Luiz replies.</p>
+        <p class="muted">Issues are public. Don't include phone numbers, personal emails, addresses or meeting passwords. Send private details to <a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a> once {{ site.Params.firstName }} replies.</p>
         <a class="btn btn-primary" href="{{ $issues }}?template=guest-proposal.yml" target="_blank" rel="noopener">Propose yourself as a guest</a>
       </div>
     </details>
@@ -200,7 +200,7 @@
   <section id="contact" class="chapter">
     <p class="chapter-no">Chapter VII</p>
     <h2>Send a Telegram</h2>
-    <p>The easiest way to reach Luiz is a <a href="{{ site.Params.repo }}/issues" target="_blank" rel="noopener">GitHub issue</a> — it keeps every invitation in one place.</p>
+    <p>The easiest way to reach {{ site.Params.firstName }} is a <a href="{{ site.Params.repo }}/issues" target="_blank" rel="noopener">GitHub issue</a> — it keeps every invitation in one place.</p>
     <ul class="contact">
       {{ range hugo.Data.links.contact }}<li><span>{{ .label }}</span><a href="{{ .url }}"{{ if not (hasPrefix .url "mailto:") }} target="_blank" rel="noopener"{{ end }}>{{ .value }}</a></li>{{ end }}
     </ul>
@@ -209,6 +209,6 @@
 
 <footer class="colophon">
   <p>Inspired by Jules Verne's <em>Around the World in Eighty Days</em> (1872).</p>
-  <p><a href="{{ site.Params.repo }}" target="_blank" rel="noopener">Source on GitHub</a> · MIT License</p>
+  <p><a href="{{ site.Params.repo }}" target="_blank" rel="noopener">Source on GitHub</a> · <a href="{{ site.Params.repo }}/blob/main/FORKING.md" target="_blank" rel="noopener">Start your own journey</a> · MIT License</p>
 </footer>
 {{ end }}
