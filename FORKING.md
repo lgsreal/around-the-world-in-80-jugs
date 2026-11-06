@@ -45,8 +45,8 @@ Replace `static/og-image.jpg` (1200×630, used for link previews) and `static/fa
 
 ```sh
 npx playwright install chromium
-npx playwright screenshot --viewport-size "1200, 630" --wait-for-timeout 2000 branding/og-card.html og.png
-npx playwright screenshot --viewport-size "1280, 640" --wait-for-timeout 2000 branding/og-card.html social.png
+npx playwright screenshot --viewport-size "1200, 630" --wait-for-timeout 2000 "file://$PWD/branding/og-card.html" og.png
+npx playwright screenshot --viewport-size "1280, 640" --wait-for-timeout 2000 "file://$PWD/branding/og-card.html" social.png
 ```
 
 Convert `og.png` to `static/og-image.jpg`, and keep it well under 300 KB so WhatsApp shows it. Upload `social.png` under **Settings → General → Social preview** as the GitHub social preview. `branding/social-preview.png` is the one used by this repository.
@@ -57,7 +57,7 @@ Rewrite the README for your journey. Its progress counter and tables are updated
 
 ## 8. Update the About section
 
-Set the repository description, website, and topics, and tick **Settings → General → Template repository** if you want others to start from your copy too. Tick **Use your GitHub Pages website**.
+Set the repository description, website, and topics, and tick **Use your GitHub Pages website**. Tick **Settings → General → Template repository** if you want others to start from your copy too.
 
 ## 9. Optional: add a custom domain
 
