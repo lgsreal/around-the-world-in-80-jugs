@@ -6,6 +6,8 @@ body:
   - type: markdown
     attributes:
       value: |
+        > **⚠️ This issue is public.** Anyone can read it. Please don't include phone numbers, personal email addresses, home addresses, meeting passwords or private links. Send private details to luiz@luizreal.com once Luiz replies.
+
         Welcome! Thanks for inviting Luiz Real to your Java User Group.
 
         The suggested talk is *How to Become a Better Software Engineer in the Age of AI*, or another [talk from the journey](https://80jugs.thecommunity.dev/#talks). Sessions are flexible 45–60 minutes plus Q&A and can be an online talk or fireside chat, optionally with a guest co-speaker. Use your JUG's usual streaming platform. Recording is welcome if your JUG allows it. Sessions are delivered in English only.
@@ -84,8 +86,8 @@ body:
   - type: input
     id: organizer_contact
     attributes:
-      label: Organizer name and contact
-      description: Email or social handle.
+      label: Organizer name and public contact
+      description: A GitHub handle or public profile (LinkedIn, X, JUG website). Please don't post email addresses or phone numbers here; Luiz will reach out and you can continue by email.
     validations:
       required: true
   - type: textarea
@@ -99,7 +101,7 @@ body:
       options:
         - label: I understand sessions are delivered in English
           required: true
-        - label: I'll share the streaming link and a quick tech-check slot in advance
+        - label: I'll send the streaming link and a quick tech-check slot by email (luiz@luizreal.com), not in this issue
           required: true
   - type: markdown
     attributes:
