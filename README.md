@@ -169,18 +169,20 @@ Would you like **Around the World in 80 JUGs** to stop at your Java User Group? 
 | **Suggested talk** | *How to Become a Better Software Engineer in the Age of AI* — or one of the [other topics](#other-topics) (Refactoring, AI-First SDLC, Career) |
 | **Duration** | Flexible — suggested 45–60 minutes plus Q&A (adjustable to your meetup format) |
 | **Format** | Online talk or fireside chat, optionally with a guest co-speaker from the Java community |
-| **Streaming** | Your JUG's usual platform (e.g., Zoom, Google Meet, StreamYard, YouTube Live). Please share the link and a quick tech check slot in advance. Recording and publishing are welcome if your JUG allows it. |
+| **Streaming** | Your JUG's usual platform (e.g., Zoom, Google Meet, StreamYard, YouTube Live). Please send the link and a quick tech check slot by email in advance. Recording and publishing are welcome if your JUG allows it. |
 | **Time zones** | Sessions can be scheduled across time zones — please propose a few dates/times in your local time zone with the UTC offset. |
 | **Language** | English only. |
 
 **How to invite Luiz:**
 
 1. Open a [JUG invitation](https://github.com/lgsreal/around-the-world-in-80-jugs/issues/new?template=jug-invitation.yml) issue — the form asks for everything below.
-2. Include your JUG name, city/country, proposed dates and times (with time zone), expected audience, streaming platform, and organizer contact.
+2. Include your JUG name, city/country, proposed dates and times (with time zone), expected audience, streaming platform, and a public organizer contact (GitHub handle or profile).
 3. Optionally, suggest a guest co-speaker — for example, a JUG leader or Java Champion from your JUG.
 4. Luiz will reply to confirm details and add your JUG to the [journey table](#journey--episodes).
 
 > 👉 **Open an issue or [contact Luiz](#contact) to schedule a session.**
+
+> 🔒 **Issues are public.** Don't include phone numbers, personal emails, addresses or meeting passwords in an issue. Send private details to [luiz@luizreal.com](mailto:luiz@luizreal.com) once Luiz replies.
 
 ---
 
@@ -203,6 +205,8 @@ The talk is usually delivered as a **live discussion / conversation**, so you do
 - Building and growing developer communities
 
 > 👉 **Interested?** Fill in the [Guest proposal](https://github.com/lgsreal/around-the-world-in-80-jugs/issues/new?template=guest-proposal.yml) form with a short bio, topic ideas, and preferred time zone — or [contact Luiz](#contact) directly.
+
+> 🔒 **Issues are public.** Don't include phone numbers, personal emails, addresses or meeting passwords in an issue. Send private details to [luiz@luizreal.com](mailto:luiz@luizreal.com) once Luiz replies.
 
 ---
 

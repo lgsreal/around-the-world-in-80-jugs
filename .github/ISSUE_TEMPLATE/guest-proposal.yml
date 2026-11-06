@@ -6,6 +6,8 @@ body:
   - type: markdown
     attributes:
       value: |
+        > **⚠️ This issue is public.** Anyone can read it. Please don't include phone numbers, personal email addresses, home addresses, meeting passwords or private links. Send private details to luiz@luizreal.com once Luiz replies.
+
         Welcome! This form is for Java Champions, JUG leaders, speakers, authors, and practitioners who care about software engineering fundamentals.
 
         The session is usually a live conversation, so no fancy slides are needed. A call to action is OK, but the session isn't commercial.
@@ -61,7 +63,8 @@ body:
   - type: input
     id: contact
     attributes:
-      label: How can Luiz reach you?
+      label: How can Luiz reach you? (public contact)
+      description: A GitHub handle or public profile (LinkedIn, X, JUG website). Please don't post email addresses or phone numbers here; Luiz will reach out and you can continue by email.
     validations:
       required: true
   - type: checkboxes
