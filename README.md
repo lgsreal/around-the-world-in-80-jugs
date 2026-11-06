@@ -258,6 +258,14 @@ Preview locally with `hugo server` and open http://localhost:1313/around-the-wor
 - `sessions/` — per-session notes, links, and Q&A highlights
 - `assets/` — images, logos, and banners (Hugo also uses `assets/` for processed files)
 
+**Releases:** push a version tag and [`.github/workflows/release.yml`](.github/workflows/release.yml) publishes a GitHub release with notes generated from the merged PRs:
+
+```sh
+git checkout main && git pull
+git tag v1.0.0
+git push origin v1.0.0
+```
+
 Suggestions and corrections are welcome — feel free to [open an issue](https://github.com/lgsreal/around-the-world-in-80-jugs/issues) or a pull request.
 
 ---
