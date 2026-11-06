@@ -128,7 +128,6 @@ blockquote { margin: 0 0 .8rem; padding: .2rem 0 .2rem 1rem; border-left: 3px so
 .aka { font-size: .95rem; color: var(--sepia); margin-top: 0; }
 .past-label { font-family: var(--type); margin: 1rem 0 .3rem; }
 .past { margin: 0; padding-left: 1.2rem; }
-.star { color: var(--brass); margin-right: .3rem; }
 .main-route {
   display: inline-block; margin-left: .5rem; font: .75rem var(--type);
   text-transform: uppercase; letter-spacing: .12em; color: var(--burgundy);

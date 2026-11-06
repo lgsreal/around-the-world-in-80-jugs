@@ -66,7 +66,7 @@
     {{ range $i, $talk := $talks }}
     {{ $past := where (where $stops "topic" $talk.key) "status" "completed" }}
     <details class="fold{{ if eq $i 0 }} fold-main{{ end }}">
-      <summary>{{ if eq $i 0 }}<span class="star" aria-hidden="true">★</span>{{ end }}<span class="tag tag-{{ $talk.key }}">{{ $talk.label }}</span> {{ $talk.title }}{{ if eq $i 0 }} <span class="main-route">Main route</span>{{ end }}</summary>
+      <summary><span class="tag tag-{{ $talk.key }}">{{ $talk.label }}</span> {{ $talk.title }}{{ if eq $i 0 }} <span class="main-route">Main route</span>{{ end }}</summary>
       <div class="fold-body">
         {{ with $talk.aka }}<p class="aka">{{ . }}</p>{{ end }}
         <blockquote id="abstract-{{ $talk.key }}">{{ $talk.abstract }}</blockquote>
