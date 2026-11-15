@@ -10,7 +10,7 @@ guests:
   - name: Professor Isidro
     github: professorisidro
     role: Professor · Java Champion
-    sessions: Quarkus Club, Out of the Box Developer Podcast, Tamilnadu JUG
+    sessions: Quarkus Club, Out of the Box Developer Podcast, Tamilnadu JUG, Naija JUG (upcoming)
     links:
       - { label: LinkedIn, url: "https://www.linkedin.com/in/professor-isidro-phd/" }
   - name: Bruno Souza

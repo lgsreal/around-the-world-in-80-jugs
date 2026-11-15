@@ -23,10 +23,10 @@ chips.forEach((chip) => {
     });
     document.querySelectorAll(".stamp").forEach((stamp) => {
       const topic = stamp.dataset.topic;
-      stamp.hidden = !(filter === "all" || topic === filter || topic === "open");
+      stamp.hidden = !(filter === "all" || (filter === "upcoming" ? stamp.dataset.status === "scheduled" : topic === filter) || topic === "open");
     });
     document.querySelectorAll(".pin").forEach((pin) => {
-      pin.classList.toggle("is-dim", filter !== "all" && !pin.dataset.topics.split(" ").includes(filter));
+      pin.classList.toggle("is-dim", filter === "upcoming" ? !pin.dataset.upcoming : filter !== "all" && !pin.dataset.topics.split(" ").includes(filter));
     });
   });
 });

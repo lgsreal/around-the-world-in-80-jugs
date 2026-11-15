@@ -18,7 +18,7 @@ Update `title` and every `[params]` key for your site: `description`, `goal`, `r
 
 ## 4. Replace the data
 
-- `data/journey.yaml` — each stop, including its date, JUG, location, topic, guests, link, and status. You can start with an empty journey.
+- `data/journey.yaml` — each stop, including its date, JUG, location, topic, guests, link, and status. Use `status: scheduled` for upcoming stops (optional `time`); they appear as upcoming and don't count as visited. You can start with an empty journey.
 - `data/talks.yaml` — talk titles and abstracts; the first entry is the main talk.
 - `data/ports.yaml` — one line per JUG city with coordinates, used for map pins.
 - `data/guests.yaml` — host and guests; a `github:` handle is used for the avatar.

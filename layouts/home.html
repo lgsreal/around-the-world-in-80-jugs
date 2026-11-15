@@ -6,6 +6,11 @@
 {{ range where $stops "status" "completed" }}{{ $visited = $visited | append .jug }}{{ end }}
 {{ $count := len (uniq $visited) }}
 {{ $pct := div (mul (float $count) 100) $goal }}
+{{ $scheduled := where $stops "status" "scheduled" }}
+{{ $scheduledJugs := slice }}
+{{ range $scheduled }}{{ if not (in $visited .jug) }}{{ $scheduledJugs = $scheduledJugs | append .jug }}{{ end }}{{ end }}
+{{ $upcoming := len (uniq $scheduledJugs) }}
+{{ $upPct := div (mul (float $upcoming) 100) $goal }}
 {{ $issues := printf "%s/issues/new" site.Params.repo }}
 
 <header class="masthead">
@@ -26,9 +31,10 @@
     <p class="motto"><strong>AI is a tool.</strong> Engineers with strong fundamentals can guide it, review its output, and use it responsibly. Start asking the right questions.</p>
 
     <div class="voyage" role="group" aria-label="Progress">
-      <p class="voyage-count"><span class="big">{{ $count }}</span> / {{ $goal }} JUGs visited</p>
-      <div class="track" role="progressbar" aria-valuemin="0" aria-valuemax="{{ $goal }}" aria-valuenow="{{ $count }}" aria-label="JUGs visited">
+      <p class="voyage-count"><span class="big">{{ $count }}</span> / {{ $goal }} JUGs visited{{ if gt $upcoming 0 }} · <span class="upcoming-count">{{ $upcoming }} upcoming</span>{{ end }}</p>
+      <div class="track" role="progressbar" aria-valuemin="0" aria-valuemax="{{ $goal }}" aria-valuenow="{{ $count }}" aria-valuetext="{{ $count }} visited{{ if gt $upcoming 0 }}, {{ $upcoming }} upcoming{{ end }}" aria-label="JUGs visited">
         <div class="track-fill" style="width: {{ $pct }}%"></div>
+        {{ if gt $upcoming 0 }}<div class="track-upcoming" style="left: {{ $pct }}%; width: {{ $upPct }}%"></div>{{ end }}
         <span class="track-marker" style="left: {{ $pct }}%">{{ partial "balloon.html" "mini" }}</span>
       </div>
       <div class="track-scale" aria-hidden="true">{{ range seq 0 20 $goal }}<span>{{ . }}</span>{{ end }}</div>
@@ -97,14 +103,16 @@
     <div class="filters" role="toolbar" aria-label="Filter stops by topic">
       <button type="button" class="chip is-active" data-filter="all" aria-pressed="true">All</button>
       {{ range $talks }}<button type="button" class="chip" data-filter="{{ .key }}" aria-pressed="false">{{ .label }}</button>{{ end }}
+      {{ if $scheduled }}<button type="button" class="chip chip-upcoming" data-filter="upcoming" aria-pressed="false">Upcoming</button>{{ end }}
     </div>
     {{ partial "atlas.html" . }}
     <ol class="stamps" reversed>
       {{ range sort $stops "date" "desc" }}
       {{ $topic := .topic }}
       {{ $label := "" }}{{ range where $talks "key" $topic }}{{ $label = .label }}{{ end }}
-      <li class="stamp stamp-{{ .topic }}" data-topic="{{ .topic }}" data-jug="{{ .jug }}">
-        <p class="stamp-date">{{ time.Format "02 Jan 2006" .date }}{{ if ne .status "completed" }} · Scheduled{{ end }}</p>
+      <li class="stamp stamp-{{ .topic }}{{ if eq .status "scheduled" }} is-upcoming{{ end }}" data-topic="{{ .topic }}" data-jug="{{ .jug }}" data-status="{{ .status }}">
+        <p class="stamp-date">{{ time.Format "02 Jan 2006" .date }}{{ if eq .status "scheduled" }} · Upcoming{{ end }}</p>
+        {{ with .time }}<p class="stamp-time">{{ . }}</p>{{ end }}
         <h3 class="stamp-jug">{{ .jug }}</h3>
         <p class="stamp-place">{{ .location }}{{ with .venue }} · {{ . }}{{ end }}</p>
         <p class="stamp-title">{{ .title }}</p>
