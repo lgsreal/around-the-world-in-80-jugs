@@ -1,7 +1,9 @@
 # Every stop on the voyage. The site counts unique `jug` values with
 # `status: completed` for the "X / 80 JUGs visited" counter.
 # topic: fundamentals | refactoring | ai-first-sdlc | career (see data/talks.yaml)
-# status: completed | scheduled
+# status: scheduled stops show as "Upcoming" (plum stamp, dashed map pin, separate
+# "N upcoming" count) and never count as visited. Switch to completed after the session.
+# time: optional free text shown on the stamp.
 stops:
   - date: "2025-02-01"
     jug: SouJava Brasília
@@ -161,3 +163,12 @@ stops:
     title: "People-First Software Engineering: 10x Your Team's Delivery with AI Agents"
     link: https://reg.tools.ibm.com/flow/ibm/techxchange26/sessioncatalog/page/sessioncatalog/session/1788904890904001K4Qj
     status: completed
+  - date: "2026-12-05"
+    time: "4 pm BRT · 8 pm WAT"
+    jug: Naija JUG
+    venue: livestream
+    location: Online
+    topic: fundamentals
+    title: "How to Become a Better Software Engineer in the Age of AI"
+    guests: [Professor Isidro]
+    status: scheduled

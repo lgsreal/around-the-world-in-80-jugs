@@ -1,12 +1,13 @@
 # Home city of each JUG, used to place it on the journey map.
-# Every JUG here with a completed stop in data/journey.yaml gets a pin; completed
-# JUGs missing from this list are counted as "Over the wire" (e.g. podcasts).
+# JUGs with completed stops get a pin; ports for scheduled-only JUGs get an upcoming pin.
+# Completed JUGs missing from this list are counted as "Over the wire" (e.g. podcasts).
 # virtual: true = every visit so far was online (hollow pin).
 regions:
   # Where each region's "NAME · count" label sits on the map.
   - { name: Brazil, lat: -28, lon: -22, anchor: start }
   - { name: North America, lat: 51, lon: -86, anchor: middle }
   - { name: India, lat: 30, lon: 80, anchor: middle }
+  - { name: Africa, lat: 22, lon: 2, anchor: middle }
 
 ports:
   - { jug: SouJava Brasília, city: "Brasília, Brazil", region: Brazil, lat: -15.79, lon: -47.88 }
@@ -25,3 +26,5 @@ ports:
   - { jug: Garden State JUG, city: "New Jersey, USA", region: North America, lat: 40.06, lon: -74.41 }
   - { jug: JCON, city: "Atlanta, USA", region: North America, lat: 33.75, lon: -84.39 }
   - { jug: Tamilnadu JUG, city: "Chennai, India", region: India, lat: 13.08, lon: 80.27, virtual: true }
+  # Country centre; the JUG lists no single home city.
+  - { jug: Naija JUG, city: "Nigeria", region: Africa, lat: 9.08, lon: 8.68, virtual: true }

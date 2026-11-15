@@ -5,6 +5,7 @@
   --sepia: #7a4b2a;
   --brass: #b8862b;
   --burgundy: #7b1e1e;
+  --plum: #5b3a6e;
   --navy: #1f3a5f;
   --green: #2f5d3a;
   --serif: "Lora", Georgia, "Times New Roman", serif;
@@ -71,12 +72,18 @@ h1 .eighty { color: var(--burgundy); }
 .voyage { max-width: 32rem; margin: 1.8rem auto 1.4rem; }
 .voyage-count { font-family: var(--type); margin: 0 0 .9rem; font-size: 1.05rem; }
 .voyage-count .big { font-family: var(--display); font-size: 2.4rem; color: var(--burgundy); font-weight: 800; }
+.upcoming-count { color: var(--plum); }
 .track {
   position: relative; height: 10px;
   background: repeating-linear-gradient(90deg, var(--sepia) 0 8px, transparent 8px 14px);
   background-size: 100% 2px; background-repeat: repeat-x; background-position: center;
 }
 .track-fill { height: 100%; background: linear-gradient(90deg, var(--brass), var(--burgundy)); border-radius: 5px; min-width: 6px; }
+.track-upcoming {
+  position: absolute; top: 0; height: 100%;
+  background: repeating-linear-gradient(135deg, var(--plum) 0 3px, transparent 3px 6px);
+  border: 1px solid var(--plum); border-radius: 5px;
+}
 .track-marker { position: absolute; top: -34px; transform: translateX(-50%); }
 .track-marker .mini { width: 24px; height: 32px; }
 .track-scale { display: flex; justify-content: space-between; font-family: var(--type); font-size: .75rem; color: var(--sepia); margin-top: .35rem; }
@@ -153,15 +160,20 @@ blockquote { margin: 0 0 .8rem; padding: .2rem 0 .2rem 1rem; border-left: 3px so
 .atlas .land { fill: var(--paper-dark); stroke: var(--sepia); stroke-width: .6; }
 .atlas .grat line { stroke: var(--sepia); stroke-width: .4; stroke-dasharray: 2 4; opacity: .5; }
 .atlas .route { fill: none; stroke: var(--brass); stroke-width: 1.3; stroke-dasharray: 4 3; opacity: .85; }
+.atlas .route-upcoming { stroke: var(--plum); stroke-dasharray: 2 3; }
 .atlas .lbl text { font: 9px var(--type); fill: var(--sepia); letter-spacing: .08em; }
 .pin { --c: var(--navy); cursor: pointer; outline: none; transition: opacity .25s; }
 .pin-refactoring { --c: var(--burgundy); }
 .pin-ai-first-sdlc { --c: var(--green); }
 .pin-career { --c: var(--sepia); }
+.pin-upcoming { --c: var(--plum); }
 .pin circle { fill: var(--c); stroke: #fbf3e1; stroke-width: 1.4; transition: r .15s; }
 .pin.is-virtual circle { fill: #fbf3e1; stroke: var(--c); stroke-width: 2.4; }
+.pin-upcoming .pin-ring { fill: #fbf3e1; stroke: var(--plum); stroke-width: 2.4; stroke-dasharray: 2.2 1.6; }
+.pin-upcoming .pin-center { fill: var(--plum); stroke: none; stroke-width: 0; }
 .pin:hover circle, .pin:focus-visible circle { r: 7.5; }
 .pin:focus-visible circle { stroke: var(--brass); stroke-width: 3; }
+.pin-upcoming:hover .pin-center, .pin-upcoming:focus-visible .pin-center { r: 1.8; stroke: none; stroke-width: 0; }
 .pin.is-dim { opacity: .15; }
 .atlas-balloon ellipse { fill: var(--burgundy); stroke: var(--ink); stroke-width: 1; }
 .atlas-balloon .stripe { fill: var(--brass); }
@@ -177,6 +189,7 @@ blockquote { margin: 0 0 .8rem; padding: .2rem 0 .2rem 1rem; border-left: 3px so
 .key-legend { margin: 0; font-size: .68rem; color: var(--sepia); line-height: 1.5; }
 .dot { display: inline-block; width: .6rem; height: .6rem; border-radius: 50%; background: var(--sepia); vertical-align: -1px; }
 .dot.hollow { width: .45rem; height: .45rem; background: #fbf3e1; border: 2px solid var(--sepia); }
+.dot.upcoming { width: .45rem; height: .45rem; background: #fbf3e1; border: 2px dashed var(--plum); }
 .stamp.is-highlight { outline: 3px solid var(--brass); outline-offset: 4px; }
 
 .stamps { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr)); gap: 1.3rem; }
@@ -197,8 +210,10 @@ blockquote { margin: 0 0 .8rem; padding: .2rem 0 .2rem 1rem; border-left: 3px so
 .stamp-refactoring { --c: var(--burgundy); }
 .stamp-ai-first-sdlc { --c: var(--green); }
 .stamp-career { --c: var(--sepia); }
+.stamp.is-upcoming { --c: var(--plum); background: #fcf8fd; outline-color: #fcf8fd; }
 .stamp-open { --c: var(--brass); background: transparent; outline-color: var(--paper); }
 .stamp-date { font-family: var(--type); color: var(--c); margin: 0; font-size: .85rem; letter-spacing: .06em; }
+.stamp-time { color: var(--c); font-family: var(--type); font-size: .8rem; margin: 0; }
 .stamp-jug { margin: .15rem 0 0; font-size: 1.25rem; line-height: 1.2; }
 .stamp-place { margin: 0 0 .5rem; font-size: .9rem; color: var(--sepia); font-style: italic; }
 .stamp-title { margin: 0 0 .3rem; font-size: .95rem; line-height: 1.4; }

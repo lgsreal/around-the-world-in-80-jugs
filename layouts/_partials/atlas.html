@@ -1,8 +1,16 @@
 {{- /* Journey map. Projection must match world-land.html: x = (lon + 130) * 3.2, y = (90 - lat) * 3.2. */ -}}
 {{- $stops := where hugo.Data.journey.stops "status" "completed" -}}
+{{- $scheduled := where hugo.Data.journey.stops "status" "scheduled" -}}
 {{- $ports := hugo.Data.ports.ports -}}
 {{- $talks := hugo.Data.talks.talks -}}
 {{- $k := 3.2 }}{{ $lon0 := 130.0 }}{{ $y0 := 96.0 }}{{ $w := 896.0 }}{{ $h := 320.0 -}}
+
+{{- $visitedJugs := slice -}}
+{{- range $stops }}{{ $visitedJugs = $visitedJugs | append .jug }}{{ end -}}
+{{- $visitedJugs = uniq $visitedJugs -}}
+{{- $upcomingJugs := slice -}}
+{{- range $scheduled }}{{ if not (in $visitedJugs .jug) }}{{ $upcomingJugs = $upcomingJugs | append .jug }}{{ end }}{{ end -}}
+{{- $upcomingCount := len (uniq $upcomingJugs) -}}
 
 {{- $pts := slice -}}
 {{- range sort $stops "date" -}}
@@ -20,6 +28,24 @@
     {{- end -}}
   {{- end -}}
 {{- end -}}
+{{- $upcomingPts := slice -}}
+{{- with $pts }}{{ $upcomingPts = $upcomingPts | append (index (last 1 .) 0) }}{{ end -}}
+{{- range sort $scheduled "date" -}}
+  {{- $stop := . -}}
+  {{- range where $ports "jug" $stop.jug -}}
+    {{- $upcomingPts = $upcomingPts | append (dict "x" (mul (add .lon $lon0) $k) "y" (mul (sub 90.0 .lat) $k)) -}}
+  {{- end -}}
+{{- end -}}
+{{- $routeUpcoming := "" -}}
+{{- range $i, $b := $upcomingPts -}}
+  {{- if $i -}}
+    {{- $a := index $upcomingPts (sub $i 1) -}}
+    {{- if or (ne $a.x $b.x) (ne $a.y $b.y) -}}
+      {{- $dist := math.Sqrt (add (math.Pow (sub $b.x $a.x) 2) (math.Pow (sub $b.y $a.y) 2)) -}}
+      {{- $routeUpcoming = printf "%sM%.1f,%.1fQ%.1f,%.1f %.1f,%.1f" $routeUpcoming $a.x $a.y (div (add $a.x $b.x) 2) (sub (div (add $a.y $b.y) 2) (mul $dist 0.28)) $b.x $b.y -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 
 {{- $regions := slice -}}
 {{- range hugo.Data.ports.regions -}}
@@ -34,26 +60,43 @@
 <figure class="atlas">
   <div class="atlas-map">
     <svg viewBox="0 {{ $y0 }} {{ $w }} {{ $h }}" aria-labelledby="atlas-title">
-      <title id="atlas-title">Map of the JUGs visited so far</title>
+      <title id="atlas-title">Map of JUGs visited and upcoming stops</title>
       <g class="grat" aria-hidden="true">
         {{- range seq -120 30 150 }}{{ $x := mul (add . $lon0) $k }}<line x1="{{ $x }}" y1="{{ $y0 }}" x2="{{ $x }}" y2="{{ add $y0 $h }}"/>{{ end -}}
         {{- range slice 30 0 -30 }}{{ $y := mul (sub 90 .) $k }}<line x1="0" y1="{{ $y }}" x2="{{ $w }}" y2="{{ $y }}"/>{{ end -}}
       </g>
       {{ partial "world-land.html" . }}
       <path class="route" aria-hidden="true" d="{{ $route }}"/>
+      {{- with $routeUpcoming }}<path class="route route-upcoming" aria-hidden="true" d="{{ . }}"/>{{ end }}
       {{- range $ports }}
       {{- $visits := sort (where $stops "jug" .jug) "date" }}
+      {{- $scheduledVisits := sort (where $scheduled "jug" .jug) "date" }}
       {{- if $visits }}
       {{- $topics := slice }}{{ range $visits }}{{ $topics = $topics | append .topic }}{{ end }}{{ $topics = uniq $topics }}
       {{- $names := slice }}{{ range $topics }}{{ $t := . }}{{ range where $talks "key" $t }}{{ $names = $names | append .label }}{{ end }}{{ end }}
       {{- $latest := index (last 1 $visits) 0 }}
       {{- $x := mul (add .lon $lon0) $k }}{{ $y := mul (sub 90.0 .lat) $k }}
       {{- $detail := printf "%d visit%s · %s" (len $visits) (cond (eq (len $visits) 1) "" "s") (delimit $names ", ") }}
+      {{- with $scheduledVisits }}{{ $next := index . 0 }}{{ $detail = printf "%s · next %s" $detail (time.Format "02 Jan 2006" $next.date) }}{{ end }}
       <g class="pin pin-{{ $latest.topic }}{{ if .virtual }} is-virtual{{ end }}" tabindex="0" role="button"
          data-jug="{{ .jug }}" data-topics="{{ delimit $topics " " }}" data-city="{{ .city }}" data-detail="{{ $detail }}{{ if .virtual }} · virtual{{ end }}"
          data-left="{{ printf "%.2f" (div (mul $x 100) $w) }}" data-top="{{ printf "%.2f" (div (mul (sub $y $y0) 100) $h) }}"
          aria-label="{{ .jug }}, {{ .city }}: {{ $detail }}">
         <circle cx="{{ printf "%.1f" $x }}" cy="{{ printf "%.1f" $y }}" r="5.5"/>
+      </g>
+      {{- else if $scheduledVisits }}
+      {{- $topics := slice }}{{ range $scheduledVisits }}{{ $topics = $topics | append .topic }}{{ end }}{{ $topics = uniq $topics }}
+      {{- $names := slice }}{{ range $topics }}{{ $t := . }}{{ range where $talks "key" $t }}{{ $names = $names | append .label }}{{ end }}{{ end }}
+      {{- $firstScheduled := index $scheduledVisits 0 }}
+      {{- $detail := printf "Upcoming · %s · %s" (time.Format "02 Jan 2006" $firstScheduled.date) (delimit $names ", ") }}
+      {{- with $firstScheduled.venue }}{{ $detail = printf "%s · %s" $detail . }}{{ end }}
+      {{- $x := mul (add .lon $lon0) $k }}{{ $y := mul (sub 90.0 .lat) $k }}
+      <g class="pin pin-upcoming" tabindex="0" role="button"
+         data-jug="{{ .jug }}" data-topics="{{ delimit $topics " " }}" data-city="{{ .city }}" data-detail="{{ $detail }}"
+         data-left="{{ printf "%.2f" (div (mul $x 100) $w) }}" data-top="{{ printf "%.2f" (div (mul (sub $y $y0) 100) $h) }}"
+         aria-label="{{ .jug }}, {{ .city }}: {{ $detail }}">
+        <circle class="pin-ring" cx="{{ printf "%.1f" $x }}" cy="{{ printf "%.1f" $y }}" r="5.5"/>
+        <circle class="pin-center" cx="{{ printf "%.1f" $x }}" cy="{{ printf "%.1f" $y }}" r="1.8"/>
       </g>
       {{- end }}
       {{- end }}
@@ -73,8 +116,9 @@
     <p class="key-title">Ports of Call</p>
     <ul>
       {{- range $regions }}{{ if .n }}<li><span>{{ .name }}</span><b>{{ .n }}</b></li>{{ end }}{{ end }}
+      {{- if gt $upcomingCount 0 }}<li class="key-upcoming"><span>Upcoming</span><b>{{ $upcomingCount }}</b></li>{{ end }}
       {{- with $wire }}<li title="{{ delimit . ", " }}"><span>Over the wire ✉</span><b>{{ len . }}</b></li>{{ end }}
     </ul>
-    <p class="key-legend"><i class="dot"></i> in person &nbsp; <i class="dot hollow"></i> virtual<br>Pins mark each JUG's home city</p>
+    <p class="key-legend"><i class="dot"></i> in person &nbsp; <i class="dot hollow"></i> virtual &nbsp; <i class="dot upcoming"></i> upcoming<br>Pins mark each JUG's home city</p>
   </figcaption>
 </figure>
