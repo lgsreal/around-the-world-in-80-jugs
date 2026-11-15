@@ -79,7 +79,7 @@
       {{- $detail := printf "%d visit%s · %s" (len $visits) (cond (eq (len $visits) 1) "" "s") (delimit $names ", ") }}
       {{- with $scheduledVisits }}{{ $next := index . 0 }}{{ $detail = printf "%s · next %s" $detail (time.Format "02 Jan 2006" $next.date) }}{{ end }}
       <g class="pin pin-{{ $latest.topic }}{{ if .virtual }} is-virtual{{ end }}" tabindex="0" role="button"
-         data-jug="{{ .jug }}" data-topics="{{ delimit $topics " " }}" data-city="{{ .city }}" data-detail="{{ $detail }}{{ if .virtual }} · virtual{{ end }}"
+         data-jug="{{ .jug }}" data-topics="{{ delimit $topics " " }}"{{ with $scheduledVisits }} data-upcoming="true"{{ end }} data-city="{{ .city }}" data-detail="{{ $detail }}{{ if .virtual }} · virtual{{ end }}"
          data-left="{{ printf "%.2f" (div (mul $x 100) $w) }}" data-top="{{ printf "%.2f" (div (mul (sub $y $y0) 100) $h) }}"
          aria-label="{{ .jug }}, {{ .city }}: {{ $detail }}">
         <circle cx="{{ printf "%.1f" $x }}" cy="{{ printf "%.1f" $y }}" r="5.5"/>
@@ -92,7 +92,7 @@
       {{- with $firstScheduled.venue }}{{ $detail = printf "%s · %s" $detail . }}{{ end }}
       {{- $x := mul (add .lon $lon0) $k }}{{ $y := mul (sub 90.0 .lat) $k }}
       <g class="pin pin-upcoming" tabindex="0" role="button"
-         data-jug="{{ .jug }}" data-topics="{{ delimit $topics " " }}" data-city="{{ .city }}" data-detail="{{ $detail }}"
+         data-jug="{{ .jug }}" data-topics="{{ delimit $topics " " }}" data-upcoming="true" data-city="{{ .city }}" data-detail="{{ $detail }}"
          data-left="{{ printf "%.2f" (div (mul $x 100) $w) }}" data-top="{{ printf "%.2f" (div (mul (sub $y $y0) 100) $h) }}"
          aria-label="{{ .jug }}, {{ .city }}: {{ $detail }}">
         <circle class="pin-ring" cx="{{ printf "%.1f" $x }}" cy="{{ printf "%.1f" $y }}" r="5.5"/>

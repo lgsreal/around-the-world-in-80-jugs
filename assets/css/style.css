@@ -153,6 +153,8 @@ blockquote { margin: 0 0 .8rem; padding: .2rem 0 .2rem 1rem; border-left: 3px so
 .filters { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; margin-bottom: 1.4rem; }
 .chip { font: .85rem var(--type); padding: .3rem .8rem; border: 1.5px solid var(--ink); background: transparent; color: var(--ink); border-radius: 999px; cursor: pointer; }
 .chip.is-active { background: var(--ink); color: var(--paper); }
+.chip-upcoming { color: var(--plum); border: 1.5px dashed var(--plum); }
+.chip-upcoming.is-active { background: var(--plum); color: var(--paper); }
 /* Journey map */
 .atlas { display: grid; grid-template-columns: 1fr 11.5rem; margin: 0 0 1.4rem; border: 3px double var(--sepia); background: rgba(255, 250, 238, .55); }
 .atlas-map { position: relative; border-right: 1px dashed var(--sepia); }

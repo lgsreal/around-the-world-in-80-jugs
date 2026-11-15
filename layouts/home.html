@@ -103,13 +103,14 @@
     <div class="filters" role="toolbar" aria-label="Filter stops by topic">
       <button type="button" class="chip is-active" data-filter="all" aria-pressed="true">All</button>
       {{ range $talks }}<button type="button" class="chip" data-filter="{{ .key }}" aria-pressed="false">{{ .label }}</button>{{ end }}
+      {{ if $scheduled }}<button type="button" class="chip chip-upcoming" data-filter="upcoming" aria-pressed="false">Upcoming</button>{{ end }}
     </div>
     {{ partial "atlas.html" . }}
     <ol class="stamps" reversed>
       {{ range sort $stops "date" "desc" }}
       {{ $topic := .topic }}
       {{ $label := "" }}{{ range where $talks "key" $topic }}{{ $label = .label }}{{ end }}
-      <li class="stamp stamp-{{ .topic }}{{ if eq .status "scheduled" }} is-upcoming{{ end }}" data-topic="{{ .topic }}" data-jug="{{ .jug }}">
+      <li class="stamp stamp-{{ .topic }}{{ if eq .status "scheduled" }} is-upcoming{{ end }}" data-topic="{{ .topic }}" data-jug="{{ .jug }}" data-status="{{ .status }}">
         <p class="stamp-date">{{ time.Format "02 Jan 2006" .date }}{{ if eq .status "scheduled" }} · Upcoming{{ end }}</p>
         {{ with .time }}<p class="stamp-time">{{ . }}</p>{{ end }}
         <h3 class="stamp-jug">{{ .jug }}</h3>
