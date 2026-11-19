@@ -8,6 +8,7 @@ regions:
   - { name: North America, lat: 51, lon: -86, anchor: middle }
   - { name: India, lat: 30, lon: 80, anchor: middle }
   - { name: Africa, lat: 22, lon: 2, anchor: middle }
+  - { name: Peru, lat: -14, lon: -84, anchor: end }
 
 ports:
   - { jug: SouJava Brasília, city: "Brasília, Brazil", region: Brazil, lat: -15.79, lon: -47.88 }
@@ -28,3 +29,4 @@ ports:
   - { jug: Tamilnadu JUG, city: "Chennai, India", region: India, lat: 13.08, lon: 80.27, virtual: true }
   # Country centre; the JUG lists no single home city.
   - { jug: Naija JUG, city: "Nigeria", region: Africa, lat: 9.08, lon: 8.68, virtual: true }
+  - { jug: PeruJUG, city: "Lima, Peru", region: Peru, lat: -12.09, lon: -77.06 }
