@@ -137,7 +137,7 @@ Previously presented at Java Noroeste JUG, Java Amazonas JUG, Chicago JUG (with 
 | 18 | October 26, 2026 | [Out of the Box Developer Podcast](https://outofthebox.dev) | Online | Fundamentals | Professor Isidro | [Watch](https://www.youtube.com/watch?v=ST61ZJUSLKY) | ✅ Completed |
 | 19 | October 28, 2026 | Tamilnadu JUG | India | Fundamentals | Professor Isidro | [Watch](https://www.youtube.com/watch?v=PyDT_ox-UJ4) | ✅ Completed |
 | 20 | October 29, 2026 | JCON (at IBM TechXchange) | Atlanta, USA | AI-First SDLC | — | [View](https://reg.tools.ibm.com/flow/ibm/techxchange26/sessioncatalog/page/sessioncatalog/session/1788904890904001K4Qj) | ✅ Completed |
-| 21 | November 28, 2026 | PeruJUG (JConf Perú 2026) | Lima, Peru | AI-First SDLC | — | [View](https://www.jconfperu.com/) | 📅 Scheduled |
+| 21 | November 28, 2026 | PeruJUG (JConf Perú 2026, livestream) | Online | AI-First SDLC | — | [View](https://www.jconfperu.com/) | 📅 Scheduled |
 | 22 | December 5, 2026 · 4 pm BRT / 8 pm WAT | Naija JUG (livestream) | Online | Fundamentals | Professor Isidro | TBA | 📅 Scheduled |
 | 23 | TBA | *Your JUG here?* [Invite us](#for-jug-organizers) | TBA | TBA | TBA | — | 🔜 Open |
 
