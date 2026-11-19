@@ -29,4 +29,4 @@ ports:
   - { jug: Tamilnadu JUG, city: "Chennai, India", region: India, lat: 13.08, lon: 80.27, virtual: true }
   # Country centre; the JUG lists no single home city.
   - { jug: Naija JUG, city: "Nigeria", region: Africa, lat: 9.08, lon: 8.68, virtual: true }
-  - { jug: PeruJUG, city: "Lima, Peru", region: Peru, lat: -12.09, lon: -77.06 }
+  - { jug: PeruJUG, city: "Lima, Peru", region: Peru, lat: -12.09, lon: -77.06, virtual: true }

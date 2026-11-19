@@ -165,8 +165,8 @@ stops:
     status: completed
   - date: "2026-11-28"
     jug: PeruJUG
-    venue: JConf Perú 2026
-    location: "Lima, Peru"
+    venue: JConf Perú 2026 · livestream
+    location: Online
     topic: ai-first-sdlc
     title: "People-First Software Engineering: 10x Your Team's Delivery with AI Agents"
     link: https://www.jconfperu.com/
