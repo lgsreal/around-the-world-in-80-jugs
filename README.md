@@ -7,7 +7,7 @@
 ![JUGs visited](https://img.shields.io/badge/JUGs%20visited-16%20%2F%2080-orange?style=for-the-badge&logo=openjdk&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 
-**Progress: 16 / 80 JUGs visited · 1 upcoming**
+**Progress: 16 / 80 JUGs visited · 2 upcoming**
 
 `████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░` 20%
 
@@ -137,8 +137,9 @@ Previously presented at Java Noroeste JUG, Java Amazonas JUG, Chicago JUG (with 
 | 18 | October 26, 2026 | [Out of the Box Developer Podcast](https://outofthebox.dev) | Online | Fundamentals | Professor Isidro | [Watch](https://www.youtube.com/watch?v=ST61ZJUSLKY) | ✅ Completed |
 | 19 | October 28, 2026 | Tamilnadu JUG | India | Fundamentals | Professor Isidro | [Watch](https://www.youtube.com/watch?v=PyDT_ox-UJ4) | ✅ Completed |
 | 20 | October 29, 2026 | JCON (at IBM TechXchange) | Atlanta, USA | AI-First SDLC | — | [View](https://reg.tools.ibm.com/flow/ibm/techxchange26/sessioncatalog/page/sessioncatalog/session/1788904890904001K4Qj) | ✅ Completed |
-| 21 | December 5, 2026 · 4 pm BRT / 8 pm WAT | Naija JUG (livestream) | Online | Fundamentals | Professor Isidro | TBA | 📅 Scheduled |
-| 22 | TBA | *Your JUG here?* [Invite us](#for-jug-organizers) | TBA | TBA | TBA | — | 🔜 Open |
+| 21 | November 28, 2026 | PeruJUG (JConf Perú 2026) | Lima, Peru | AI-First SDLC | — | [View](https://www.jconfperu.com/) | 📅 Scheduled |
+| 22 | December 5, 2026 · 4 pm BRT / 8 pm WAT | Naija JUG (livestream) | Online | Fundamentals | Professor Isidro | TBA | 📅 Scheduled |
+| 23 | TBA | *Your JUG here?* [Invite us](#for-jug-organizers) | TBA | TBA | TBA | — | 🔜 Open |
 
 The progress counter counts **unique JUGs** (Brasil JUG, Quarkus Club, Chicago JUG, and Java Noroeste JUG were visited twice).
 Scheduled stops are shown as upcoming and only count once they're completed.
@@ -152,7 +153,7 @@ Scheduled stops are shown as upcoming and only count once they're completed.
 | Name | Role / Recognition | Session(s) | Socials |
 |------|--------------------|------------|---------|
 | **Luiz Real** | Forward Deployed Engineer · Oracle ACE · JUG Leader · Author | All | [GitHub](https://github.com/lgsreal) · [LinkedIn](https://www.linkedin.com/in/lgsreal/) |
-| **Professor Isidro** | Professor · Java Champion | #4, #18, #19, #21 | [LinkedIn](https://www.linkedin.com/in/professor-isidro-phd/) |
+| **Professor Isidro** | Professor · Java Champion | #4, #18, #19, #22 | [LinkedIn](https://www.linkedin.com/in/professor-isidro-phd/) |
 | **Bruno Souza** | Java Champion | #13 | [LinkedIn](https://www.linkedin.com/in/brjavaman/) |
 
 ---
