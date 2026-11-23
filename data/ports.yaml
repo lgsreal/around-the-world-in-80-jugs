@@ -12,7 +12,8 @@ regions:
 
 ports:
   - { jug: SouJava Brasília, city: "Brasília, Brazil", region: Brazil, lat: -15.79, lon: -47.88 }
-  - { jug: SouJava Campinas, city: "Campinas, Brazil", region: Brazil, lat: -22.91, lon: -47.06 }
+  # Pulled west from Campinas so its pin isn't hidden by the São Paulo pins.
+  - { jug: SouJava Campinas, city: "Campinas, Brazil", region: Brazil, lat: -22.5, lon: -53.0 }
   - { jug: Brasil JUG, city: "Recife, Brazil", region: Brazil, lat: -8.05, lon: -34.88 }
   - { jug: Quarkus Club, city: "São Paulo, Brazil", region: Brazil, lat: -23.55, lon: -46.63 }
   # Nudged slightly from São Paulo's centre so it doesn't sit under Quarkus Club.
