@@ -3,6 +3,7 @@ resources:
   - { label: "Java Web Internals", note: "Book by Professor Isidro", url: "https://www.packtpub.com/en-us/product/java-web-internals-9781835881491" }
   - { label: "Java Fullstack 2027", note: "Ebook by Vincent Vauban", url: "https://javafullstack2027.mystrikingly.com/" }
   - { label: "Dev Career Masterplan", note: "Book by Bruno Souza and Heather VanCura", url: "https://www.careermasterplan.dev/" }
+  - { label: "Essential Data Structures and Algorithms in Java", note: "Book by Joseph Su", url: "https://a.co/d/01Ks0z7b" }
 contact:
   - { label: GitHub, value: "@lgsreal", url: "https://github.com/lgsreal" }
   - { label: LinkedIn, value: "in/lgsreal", url: "https://www.linkedin.com/in/lgsreal/" }
