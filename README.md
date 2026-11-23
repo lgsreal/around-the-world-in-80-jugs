@@ -139,7 +139,7 @@ Previously presented at Java Noroeste JUG, Java Amazonas JUG, Chicago JUG (with 
 | 20 | October 29, 2026 | JCON (at IBM TechXchange) | Atlanta, USA | AI-First SDLC | — | [View](https://reg.tools.ibm.com/flow/ibm/techxchange26/sessioncatalog/page/sessioncatalog/session/1788904890904001K4Qj) | ✅ Completed |
 | 21 | November 28, 2026 | PeruJUG (JConf Perú 2026, livestream) | Online | AI-First SDLC | — | [View](https://www.jconfperu.com/) | 📅 Scheduled |
 | 22 | December 5, 2026 · 4 pm BRT / 8 pm WAT | Naija JUG (livestream) | Online | Fundamentals | Professor Isidro | TBA | 📅 Scheduled |
-| 23 | January 23, 2027 | Leitura Dev (Leitura Dev Encontros, at Oracle do Brasil) | São Paulo, Brazil | Fundamentals | — | [View](https://luma.com/giqoq552) | 📅 Scheduled |
+| 23 | January 23, 2027 | Leitura Dev (Leitura Dev Encontros, at Oracle do Brasil) | São Paulo, Brazil | Fundamentals | Professor Isidro | [View](https://luma.com/giqoq552) | 📅 Scheduled |
 | 24 | TBA | *Your JUG here?* [Invite us](#for-jug-organizers) | TBA | TBA | TBA | — | 🔜 Open |
 
 The progress counter counts **unique JUGs** (Brasil JUG, Quarkus Club, Chicago JUG, and Java Noroeste JUG were visited twice).
@@ -154,7 +154,7 @@ Scheduled stops are shown as upcoming and only count once they're completed.
 | Name | Role / Recognition | Session(s) | Socials |
 |------|--------------------|------------|---------|
 | **Luiz Real** | Forward Deployed Engineer · Oracle ACE · JUG Leader · Author | All | [GitHub](https://github.com/lgsreal) · [LinkedIn](https://www.linkedin.com/in/lgsreal/) |
-| **Professor Isidro** | Professor · Java Champion | #4, #18, #19, #22 | [LinkedIn](https://www.linkedin.com/in/professor-isidro-phd/) |
+| **Professor Isidro** | Professor · Java Champion | #4, #18, #19, #22, #23 | [LinkedIn](https://www.linkedin.com/in/professor-isidro-phd/) |
 | **Bruno Souza** | Java Champion | #13 | [LinkedIn](https://www.linkedin.com/in/brjavaman/) |
 
 ---
