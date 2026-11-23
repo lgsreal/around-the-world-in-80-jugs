@@ -180,3 +180,11 @@ stops:
     title: "How to Become a Better Software Engineer in the Age of AI"
     guests: [Professor Isidro]
     status: scheduled
+  - date: "2027-01-23"
+    jug: Leitura Dev
+    venue: Leitura Dev Encontros · at Oracle do Brasil
+    location: São Paulo, Brazil
+    topic: fundamentals
+    title: "How to Become a Better Software Engineer in the Age of AI"
+    link: https://luma.com/giqoq552
+    status: scheduled

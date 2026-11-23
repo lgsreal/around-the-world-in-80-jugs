@@ -17,6 +17,8 @@ ports:
   - { jug: Quarkus Club, city: "São Paulo, Brazil", region: Brazil, lat: -23.55, lon: -46.63 }
   # Nudged slightly from São Paulo's centre so it doesn't sit under Quarkus Club.
   - { jug: São Paulo Java Meetup, city: "São Paulo, Brazil", region: Brazil, lat: -23.0, lon: -46.0 }
+  # Nudged southwest from São Paulo's centre so it doesn't sit under nearby pins.
+  - { jug: Leitura Dev, city: "São Paulo, Brazil", region: Brazil, lat: -25.5, lon: -50.5 }
   - { jug: UaiJUG, city: "Uberlândia, Brazil", region: Brazil, lat: -18.92, lon: -48.28, virtual: true }
   - { jug: Java Noroeste JUG, city: "São José do Rio Preto, Brazil", region: Brazil, lat: -20.81, lon: -49.38 }
   - { jug: Java Amazonas JUG, city: "Manaus, Brazil", region: Brazil, lat: -3.12, lon: -60.02, virtual: true }
